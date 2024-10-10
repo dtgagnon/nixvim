@@ -1,316 +1,319 @@
 { helpers, lib, ... }:
 let
-  theme = lib.plusultra.theme.nord;
+  theme = lib.spirenix.theme.nord;
 in
 {
   plugins.lualine = {
     enable = true;
+    settings= {
+      options = {
+        globalstatus = true;
 
-    globalstatus = true;
+        disabledFiletypes = {
+          statusline = [
+            "dashboard"
+            "NvimTree"
+            "Trouble"
+          ];
+          winbar = [
+            "dashboard"
+            "NvimTree"
+            "Trouble"
+          ];
+        };
 
-    disabledFiletypes = {
-      statusline = [
-        "dashboard"
-        "NvimTree"
-        "Trouble"
-      ];
-      winbar = [
-        "dashboard"
-        "NvimTree"
-        "Trouble"
-      ];
-    };
+        ignoreFocus = [
+          "dashboard"
+          "NvimTree"
+          "Trouble"
+        ];
 
-    ignoreFocus = [
-      "dashboard"
-      "NvimTree"
-      "Trouble"
-    ];
+        componentSeparators = {
+          left = "⋮";
+          right = "⋮";
+        };
 
-    componentSeparators = {
-      left = "⋮";
-      right = "⋮";
-    };
+        sectionSeparators = {
+          left = "";
+          right = "";
+        };
 
-    sectionSeparators = {
-      left = "";
-      right = "";
-    };
-
-    theme = with theme; {
-      normal = {
-        a = {
-          fg = nord2;
-          bg = nord6;
-          gui = "bold";
-        };
-        b.bg = nord10;
-        c.bg = nord0;
-        x.bg = nord0;
-        y.bg = nord0;
-        z = {
-          fg = nord6;
-          bg = nord10;
-        };
-      };
-      insert = {
-        a = {
-          fg = nord10;
-          bg = nord6;
-          gui = "bold";
-        };
-        b.bg = nord10;
-        c.bg = nord0;
-        x.bg = nord0;
-        y.bg = nord0;
-        z = {
-          fg = nord6;
-          bg = nord10;
-        };
-      };
-      visual = {
-        a = {
-          fg = nord15;
-          bg = nord6;
-          gui = "bold";
-        };
-        b.bg = nord10;
-        c.bg = nord0;
-        x.bg = nord0;
-        y.bg = nord0;
-        z = {
-          fg = nord6;
-          bg = nord10;
-        };
-      };
-      replace = {
-        a = {
-          fg = nord12;
-          bg = nord6;
-          gui = "bold";
-        };
-        b.bg = nord10;
-        c.bg = nord0;
-        x.bg = nord0;
-        y.bg = nord0;
-        z = {
-          fg = nord6;
-          bg = nord10;
-        };
-      };
-      inactive = {
-        a = {
-          fg = nord10;
-          bg = nord6;
-          gui = "bold";
-        };
-        b.bg = nord10;
-        c.bg = nord0;
-        x.bg = nord0;
-        y.bg = nord0;
-        z = {
-          fg = nord6;
-          bg = nord10;
-        };
-      };
-    };
-
-    sections = {
-      lualine_a = [
-        {
-          name = helpers.mkRaw ''
-            function()
-              return ""
-            end
-          '';
-        }
-      ];
-      lualine_b = [
-        {
-          name = "branch";
-          icon = "";
-        }
-        { name = "diff"; }
-      ];
-      lualine_c = [ "" ];
-      lualine_x = [
-        {
-          name = "diagnostics";
-          extraConfig = {
-            update_in_insert = true;
-          };
-        }
-      ];
-      lualine_y = [ "" ];
-      lualine_z = [
-        { name = "%l:%c"; }
-        {
-          name = "fileformat";
-          extraConfig = {
-            icon_only = true;
-          };
-        }
-      ];
-    };
-
-    tabline = {
-      lualine_a = [ "" ];
-      lualine_b = [ "" ];
-      lualine_c = [
-        {
-          name = "windows";
-          extraConfig = {
-            symbols = {
-              modified = "";
-              readonly = "";
-              unnamed = " ";
-              newfile = " ";
+        theme = with theme; {
+          normal = {
+            a = {
+              fg = nord2;
+              bg = nord6;
+              gui = "bold";
             };
-
-            windows_color = {
-              active = {
-                fg = theme.nord6;
-                bg = theme.nord10;
-              };
-              inactive = {
-                fg = theme.nord6;
-                bg = theme.nord1;
-              };
+            b.bg = nord10;
+            c.bg = nord0;
+            x.bg = nord0;
+            y.bg = nord0;
+            z = {
+              fg = nord6;
+              bg = nord10;
             };
           };
-
-          separator = {
-            right = "";
-          };
-        }
-      ];
-      lualine_x = [ "" ];
-      lualine_y = [ "" ];
-      lualine_z = [
-        {
-          name = "tabs";
-
-          extraConfig = {
-            tabs_color = {
-              active = {
-                fg = theme.nord6;
-                bg = theme.nord10;
-              };
-              inactive = {
-                fg = theme.nord6;
-                bg = theme.nord1;
-              };
+          insert = {
+            a = {
+              fg = nord10;
+              bg = nord6;
+              gui = "bold";
+            };
+            b.bg = nord10;
+            c.bg = nord0;
+            x.bg = nord0;
+            y.bg = nord0;
+            z = {
+              fg = nord6;
+              bg = nord10;
             };
           };
-          separator = {
-            left = "";
+          visual = {
+            a = {
+              fg = nord15;
+              bg = nord6;
+              gui = "bold";
+            };
+            b.bg = nord10;
+            c.bg = nord0;
+            x.bg = nord0;
+            y.bg = nord0;
+            z = {
+              fg = nord6;
+              bg = nord10;
+            };
           };
-        }
-      ];
-    };
+          replace = {
+            a = {
+              fg = nord12;
+              bg = nord6;
+              gui = "bold";
+            };
+            b.bg = nord10;
+            c.bg = nord0;
+            x.bg = nord0;
+            y.bg = nord0;
+            z = {
+              fg = nord6;
+              bg = nord10;
+            };
+          };
+          inactive = {
+            a = {
+              fg = nord10;
+              bg = nord6;
+              gui = "bold";
+            };
+            b.bg = nord10;
+            c.bg = nord0;
+            x.bg = nord0;
+            y.bg = nord0;
+            z = {
+              fg = nord6;
+              bg = nord10;
+            };
+          };
+        };
+      };
 
-    winbar = {
-      lualine_a = [ "" ];
-      lualine_b = [ "" ];
-      lualine_c = [
-        ""
-        {
-          name = helpers.mkRaw ''
-            require('nvim-navic').get_location
-          '';
-          extraConfig = {
-            cond = helpers.mkRaw ''
-              require('nvim-navic').is_available
+      sections = {
+        lualine_a = [
+          {
+            name = helpers.mkRaw ''
+              function()
+                return ""
+              end
             '';
-          };
-        }
-      ];
-      lualine_x = [ "" ];
-      lualine_y = [ "" ];
-      lualine_z = [
-        {
-          name = "filetype";
-          extraConfig = {
-            colored = false;
-            icon_only = true;
-          };
-
-          color = {
-            fg = theme.nord0;
-            bg = theme.nord6;
-          };
-        }
-        {
-          name = "filename";
-          extraConfig = {
-            file_status = true;
-            shorting_target = 25;
-            path = 1;
-
-            symbols = {
-              modified = "";
-              readonly = "";
-              unnamed = " ";
-              newfile = " ";
+          }
+        ];
+        lualine_b = [
+          {
+            name = "branch";
+            icon = "";
+          }
+          { name = "diff"; }
+        ];
+        lualine_c = [ "" ];
+        lualine_x = [
+          {
+            name = "diagnostics";
+            extraConfig = {
+              update_in_insert = true;
             };
-          };
-
-          separator = {
-            left = "";
-          };
-
-          color = {
-            fg = theme.nord6;
-            bg = theme.nord10;
-          };
-        }
-      ];
-    };
-
-    inactiveWinbar = {
-      lualine_a = [ "" ];
-      lualine_b = [ "" ];
-      lualine_c = [ "" ];
-      lualine_x = [ "" ];
-      lualine_y = [ "" ];
-      lualine_z = [
-        {
-          name = "filetype";
-          extraConfig = {
-            colored = false;
-            icon_only = true;
-          };
-
-          color = {
-            fg = theme.nord6;
-            bg = theme.nord1;
-          };
-        }
-        {
-          name = "filename";
-          extraConfig = {
-            file_status = true;
-            path = 1;
-            shorting_target = 25;
-
-            symbols = {
-              modified = "";
-              readonly = "";
-              unnamed = " ";
-              newfile = " ";
+          }
+        ];
+        lualine_y = [ "" ];
+        lualine_z = [
+          { name = "%l:%c"; }
+          {
+            name = "fileformat";
+            extraConfig = {
+              icon_only = true;
             };
-          };
+          }
+        ];
+      };
 
-          separator = {
-            left = "";
-          };
+      tabline = {
+        lualine_a = [ "" ];
+        lualine_b = [ "" ];
+        lualine_c = [
+          {
+            name = "windows";
+            extraConfig = {
+              symbols = {
+                modified = "";
+                readonly = "";
+                unnamed = " ";
+                newfile = " ";
+              };
 
-          color = {
-            fg = theme.nord6;
-            bg = theme.nord1;
-          };
-        }
-      ];
+              windows_color = {
+                active = {
+                  fg = theme.nord6;
+                  bg = theme.nord10;
+                };
+                inactive = {
+                  fg = theme.nord6;
+                  bg = theme.nord1;
+                };
+              };
+            };
+
+            separator = {
+              right = "";
+            };
+          }
+        ];
+        lualine_x = [ "" ];
+        lualine_y = [ "" ];
+        lualine_z = [
+          {
+            name = "tabs";
+
+            extraConfig = {
+              tabs_color = {
+                active = {
+                  fg = theme.nord6;
+                  bg = theme.nord10;
+                };
+                inactive = {
+                  fg = theme.nord6;
+                  bg = theme.nord1;
+                };
+              };
+            };
+            separator = {
+              left = "";
+            };
+          }
+        ];
+      };
+
+      winbar = {
+        lualine_a = [ "" ];
+        lualine_b = [ "" ];
+        lualine_c = [
+          ""
+          {
+            name = helpers.mkRaw ''
+              require('nvim-navic').get_location
+            '';
+            extraConfig = {
+              cond = helpers.mkRaw ''
+                require('nvim-navic').is_available
+              '';
+            };
+          }
+        ];
+        lualine_x = [ "" ];
+        lualine_y = [ "" ];
+        lualine_z = [
+          {
+            name = "filetype";
+            extraConfig = {
+              colored = false;
+              icon_only = true;
+            };
+
+            color = {
+              fg = theme.nord0;
+              bg = theme.nord6;
+            };
+          }
+          {
+            name = "filename";
+            extraConfig = {
+              file_status = true;
+              shorting_target = 25;
+              path = 1;
+
+              symbols = {
+                modified = "";
+                readonly = "";
+                unnamed = " ";
+                newfile = " ";
+              };
+            };
+
+            separator = {
+              left = "";
+            };
+
+            color = {
+              fg = theme.nord6;
+              bg = theme.nord10;
+            };
+          }
+        ];
+      };
+
+      inactiveWinbar = {
+        lualine_a = [ "" ];
+        lualine_b = [ "" ];
+        lualine_c = [ "" ];
+        lualine_x = [ "" ];
+        lualine_y = [ "" ];
+        lualine_z = [
+          {
+            name = "filetype";
+            extraConfig = {
+              colored = false;
+              icon_only = true;
+            };
+
+            color = {
+              fg = theme.nord6;
+              bg = theme.nord1;
+            };
+          }
+          {
+            name = "filename";
+            extraConfig = {
+              file_status = true;
+              path = 1;
+              shorting_target = 25;
+
+              symbols = {
+                modified = "";
+                readonly = "";
+                unnamed = " ";
+                newfile = " ";
+              };
+            };
+
+            separator = {
+              left = "";
+            };
+
+            color = {
+              fg = theme.nord6;
+              bg = theme.nord1;
+            };
+          }
+        ];
+      };
     };
   };
 

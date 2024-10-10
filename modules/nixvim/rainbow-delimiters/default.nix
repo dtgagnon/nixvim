@@ -1,6 +1,6 @@
 { lib, ... }:
 let
-  theme = lib.plusultra.theme.nord;
+  theme = lib.spirenix.theme.nord;
 in
 {
   highlight = {
