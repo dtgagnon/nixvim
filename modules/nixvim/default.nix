@@ -7,6 +7,7 @@
   luaLoader.enable = true;
 
   extraPlugins = with pkgs.vimPlugins; [
+    aider-nvim
     vim-bufkill
   ];
 
