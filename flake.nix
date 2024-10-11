@@ -32,14 +32,14 @@
       overlays = with inputs; [ nixvim.overlays.default ];
 
       outputs-builder = channels: {
-        formatter = channels.nixpkgs.nixfmt-rfc-style;
+        formatter = channels.nixpkgs.hooks.nixfmt-rfc-style;
         checks.pre-commit-check = inputs.pre-commit-hooks.lib.${channels.nixpkgs.system}.run {
           src = ./.;
           hooks = {
-            nixfmt = {
+            nixfmt-classic = {
               enable = true;
               entry = "${channels.nixpkgs.nixfmt-rfc-style}/bin/nixfmt";
-              extraPackages = [ inputs.nixpkgs.nixfmt-rfc-style ];
+              extraPackages = [ inputs.nixpkgs.hooks.nixfmt-rfc-style ];
             };
           };
         };

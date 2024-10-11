@@ -119,39 +119,45 @@ in
 
       sections = {
         lualine_a = [
-          {
-            name = helpers.mkRaw ''
-              function()
-                return ""
+          ''
+            {
+              name = function()
+                  return ""
               end
-            '';
-          }
+            }
+          ''
         ];
         lualine_b = [
-          {
-            name = "branch";
-            icon = "";
-          }
-          { name = "diff"; }
+          ''
+            {
+              name = "branch";
+              icon = "";
+            }
+            { name = "diff"; }
+          ''
         ];
         lualine_c = [ "" ];
         lualine_x = [
-          {
-            name = "diagnostics";
-            extraConfig = {
-              update_in_insert = true;
-            };
-          }
+          ''
+            {
+              name = "diagnostics";
+              extraConfig = {
+                update_in_insert = true;
+              };
+            }
+          ''
         ];
         lualine_y = [ "" ];
         lualine_z = [
-          { name = "%l:%c"; }
-          {
-            name = "fileformat";
-            extraConfig = {
-              icon_only = true;
-            };
-          }
+          ''
+            { name = "%l:%c"; }
+            {
+              name = "fileformat";
+              extraConfig = {
+                icon_only = true;
+              };
+            }
+          ''
         ];
       };
 
@@ -159,55 +165,59 @@ in
         lualine_a = [ "" ];
         lualine_b = [ "" ];
         lualine_c = [
-          {
-            name = "windows";
-            extraConfig = {
-              symbols = {
-                modified = "";
-                readonly = "";
-                unnamed = " ";
-                newfile = " ";
+          ''
+            {
+              name = "windows";
+              extraConfig = {
+                symbols = {
+                  modified = "";
+                  readonly = "";
+                  unnamed = " ";
+                  newfile = " ";
+                };
+
+                windows_color = {
+                  active = {
+                    fg = theme.nord6;
+                    bg = theme.nord10;
+                  };
+                  inactive = {
+                    fg = theme.nord6;
+                    bg = theme.nord1;
+                  };
+                };
               };
 
-              windows_color = {
-                active = {
-                  fg = theme.nord6;
-                  bg = theme.nord10;
-                };
-                inactive = {
-                  fg = theme.nord6;
-                  bg = theme.nord1;
-                };
+              separator = {
+                right = "";
               };
-            };
-
-            separator = {
-              right = "";
-            };
-          }
+            }
+          ''
         ];
         lualine_x = [ "" ];
         lualine_y = [ "" ];
         lualine_z = [
-          {
-            name = "tabs";
+          ''
+            {
+              name = "tabs";
 
-            extraConfig = {
-              tabs_color = {
-                active = {
-                  fg = theme.nord6;
-                  bg = theme.nord10;
-                };
-                inactive = {
-                  fg = theme.nord6;
-                  bg = theme.nord1;
+              extraConfig = {
+                tabs_color = {
+                  active = {
+                    fg = theme.nord6;
+                    bg = theme.nord10;
+                  };
+                  inactive = {
+                    fg = theme.nord6;
+                    bg = theme.nord1;
+                  };
                 };
               };
-            };
-            separator = {
-              left = "";
-            };
-          }
+              separator = {
+                left = "";
+              };
+            }
+          ''
         ];
       };
 
@@ -215,21 +225,21 @@ in
         lualine_a = [ "" ];
         lualine_b = [ "" ];
         lualine_c = [
-          ""
-          {
-            name = helpers.mkRaw ''
-              require('nvim-navic').get_location
-            '';
-            extraConfig = {
-              cond = helpers.mkRaw ''
-                require('nvim-navic').is_available
-              '';
-            };
-          }
+          ''
+            {
+              name = function()
+                return require('nvim-navic').get_location()
+              end,
+              cond = function()
+                return require('nvim-navic').is_available()
+              end,
+            }
+          ''
         ];
         lualine_x = [ "" ];
         lualine_y = [ "" ];
         lualine_z = [
+          ''
           {
             name = "filetype";
             extraConfig = {
@@ -266,6 +276,7 @@ in
               bg = theme.nord10;
             };
           }
+          ''
         ];
       };
 
