@@ -27,7 +27,7 @@
 
       channels-config.allowUnfree = true;
 
-      alias.packages.default = "nixvim";
+      alias.packages.default = "neovim";
 
       overlays = with inputs; [ nixvim.overlays.default ];
 
