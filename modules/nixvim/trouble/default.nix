@@ -7,10 +7,10 @@
       auto_open = false;
       auto_fold = false;
       auto_preview = false;
-      position = "right";
-      use_diagnostic_signs = true;
+      win.position = "right";
+      useDiagnosticSigns = true;
 
-      action_keys = { hover = "<leader>gh"; };
+      actionKeys = { hover = "<leader>gh"; };
     };
   };
 
