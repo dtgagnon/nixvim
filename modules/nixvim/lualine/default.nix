@@ -103,38 +103,36 @@ in
 
     settings.sections = {
       lualine_a = [
-        {
-          name = helpers.mkRaw ''
-            function()
-              return ""
-            end
-          '';
-        }
+        # Use a Lua function for custom component
+        helpers.mkRaw
+        ''
+          function()
+            return ""
+          end
+        ''
       ];
       lualine_b = [
+        # Built-in component with an icon
         {
-          name = "branch";
+          component = "branch";
           icon = "";
         }
-        { name = "diff"; }
+        # Simple built-in component
+        "diff"
       ];
       lualine_c = [ "" ];
       lualine_x = [
         {
-          name = "diagnostics";
-          extraConfig = {
-            update_in_insert = true;
-          };
+          component = "diagnostics";
+          update_in_insert = true;
         }
       ];
       lualine_y = [ "" ];
       lualine_z = [
-        { name = "%l:%c"; }
+        "%l:%c"
         {
-          name = "fileformat";
-          extraConfig = {
-            icon_only = true;
-          };
+          component = "fileformat";
+          icon_only = true;
         }
       ];
     };
@@ -144,19 +142,17 @@ in
       lualine_b = [ "" ];
       lualine_c = [
         {
-          name = "windows";
-          extraConfig = {
-            symbols = common_symbols;
+          component = "windows";
+          symbols = common_symbols;
 
-            windows_color = {
-              active = {
-                fg = theme.nord6;
-                bg = theme.nord10;
-              };
-              inactive = {
-                fg = theme.nord6;
-                bg = theme.nord1;
-              };
+          windows_color = {
+            active = {
+              fg = theme.nord6;
+              bg = theme.nord10;
+            };
+            inactive = {
+              fg = theme.nord6;
+              bg = theme.nord1;
             };
           };
 
@@ -169,20 +165,19 @@ in
       lualine_y = [ "" ];
       lualine_z = [
         {
-          name = "tabs";
+          component = "tabs";
 
-          extraConfig = {
-            tabs_color = {
-              active = {
-                fg = theme.nord6;
-                bg = theme.nord10;
-              };
-              inactive = {
-                fg = theme.nord6;
-                bg = theme.nord1;
-              };
+          tabs_color = {
+            active = {
+              fg = theme.nord6;
+              bg = theme.nord10;
+            };
+            inactive = {
+              fg = theme.nord6;
+              bg = theme.nord1;
             };
           };
+
           separator = {
             left = "";
           };
@@ -196,25 +191,22 @@ in
       lualine_c = [
         ""
         {
-          name = helpers.mkRaw ''
+          # Custom component using Lua functions
+          component = helpers.mkRaw ''
             require('nvim-navic').get_location
           '';
-          extraConfig = {
-            cond = helpers.mkRaw ''
-              require('nvim-navic').is_available
-            '';
-          };
+          cond = helpers.mkRaw ''
+            require('nvim-navic').is_available
+          '';
         }
       ];
       lualine_x = [ "" ];
       lualine_y = [ "" ];
       lualine_z = [
         {
-          name = "filetype";
-          extraConfig = {
-            colored = false;
-            icon_only = true;
-          };
+          component = "filetype";
+          colored = false;
+          icon_only = true;
 
           color = {
             fg = theme.nord0;
@@ -222,14 +214,11 @@ in
           };
         }
         {
-          name = "filename";
-          extraConfig = {
-            file_status = true;
-            shorting_target = 25;
-            path = 1;
-
-            symbols = common_symbols;
-          };
+          component = "filename";
+          file_status = true;
+          shorting_target = 25;
+          path = 1;
+          symbols = common_symbols;
 
           separator = {
             left = "";
@@ -251,11 +240,9 @@ in
       lualine_y = [ "" ];
       lualine_z = [
         {
-          name = "filetype";
-          extraConfig = {
-            colored = false;
-            icon_only = true;
-          };
+          component = "filetype";
+          colored = false;
+          icon_only = true;
 
           color = {
             fg = theme.nord6;
@@ -263,14 +250,11 @@ in
           };
         }
         {
-          name = "filename";
-          extraConfig = {
-            file_status = true;
-            path = 1;
-            shorting_target = 25;
-
-            symbols = common_symbols;
-          };
+          component = "filename";
+          file_status = true;
+          path = 1;
+          shorting_target = 25;
+          symbols = common_symbols;
 
           separator = {
             left = "";
