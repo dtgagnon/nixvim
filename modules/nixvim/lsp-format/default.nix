@@ -1,5 +1,1 @@
-{
-  plugins.lsp-format = {
-    enable = true;
-  };
-}
+{ plugins.lsp-format = { enable = true; }; }

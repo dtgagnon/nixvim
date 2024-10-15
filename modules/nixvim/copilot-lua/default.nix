@@ -12,9 +12,7 @@
         refresh = "gr";
         open = "<C-CR>";
       };
-      layout = {
-        position = "right";
-      };
+      layout = { position = "right"; };
     };
 
     suggestion = {

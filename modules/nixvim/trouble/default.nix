@@ -10,9 +10,7 @@
       position = "right";
       use_diagnostic_signs = true;
 
-      action_keys = {
-        hover = "<leader>gh";
-      };
+      action_keys = { hover = "<leader>gh"; };
     };
   };
 
@@ -21,17 +19,13 @@
       mode = "n";
       action = "<cmd>Trouble diagnostics toggle<cr>";
       key = "<leader>tt";
-      options = {
-        desc = "Toggle trouble";
-      };
+      options = { desc = "Toggle trouble"; };
     }
     {
       mode = "n";
       action = "<cmd>Trouble todo toggle<cr>";
       key = "<leader>tn";
-      options = {
-        desc = "Toggle notes";
-      };
+      options = { desc = "Toggle notes"; };
     }
   ];
 }

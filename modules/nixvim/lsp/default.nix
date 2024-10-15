@@ -1,35 +1,18 @@
 { helpers, pkgs, ... }:
 let
-  thunk =
-    body:
+  thunk = body:
     helpers.mkRaw ''
       function()
         ${body}
       end
     '';
-in
-{
-  extraPackages = with pkgs; [
-    nixfmt-rfc-style
-  ];
+in {
+  extraPackages = with pkgs; [ nixfmt-rfc-style ];
 
-  extraPlugins = with pkgs.vimPlugins; [
-    actions-preview-nvim
-  ];
+  extraPlugins = with pkgs.vimPlugins; [ actions-preview-nvim ];
 
-  extraConfigLua = ''
-		do
-			require("actions-preview").setup({
-				diff = {
-					ignore_whitespace = true,
-				},
-				highlight_command = {
-					require("actions-preview.highlight").diff_highlight()
-				},
-				backend = { "telescope" },
-			})
-		end
-	'';
+  extraConfigLua =
+    "	do\n		require(\"actions-preview\").setup({\n			diff = {\n				ignore_whitespace = true,\n			},\n			highlight_command = {\n				require(\"actions-preview.highlight\").diff_highlight()\n			},\n			backend = { \"telescope\" },\n		})\n	end\n";
 
   extraConfigLuaPre = ''
     do
@@ -49,21 +32,11 @@ in
     end
   '';
 
-  autoCmd = [
-    {
-      event = [
-        "BufRead"
-        "BufNewFile"
-      ];
-      pattern = [
-        "*.txt"
-        "*.md"
-        "*.tex"
-        "LICENSE"
-      ];
-      command = "setlocal spell";
-    }
-  ];
+  autoCmd = [{
+    event = [ "BufRead" "BufNewFile" ];
+    pattern = [ "*.txt" "*.md" "*.tex" "LICENSE" ];
+    command = "setlocal spell";
+  }];
 
   plugins.lsp = {
     enable = true;
@@ -112,12 +85,11 @@ in
           };
         }
         {
-          action =
-            helpers.mkRaw
-              # lua
-              ''
-                require('telescope.builtin').lsp_definitions
-              '';
+          action = helpers.mkRaw
+            # lua
+            ''
+              require('telescope.builtin').lsp_definitions
+            '';
           key = "<leader>gd";
           options = {
             desc = "LSP: Definitions";
@@ -125,12 +97,11 @@ in
           };
         }
         {
-          action =
-            helpers.mkRaw
-              # lua
-              ''
-                require('actions-preview').code_actions
-              '';
+          action = helpers.mkRaw
+            # lua
+            ''
+              require('actions-preview').code_actions
+            '';
           key = "<leader>ca";
           options = {
             desc = "LSP: Code Actions";
@@ -164,12 +135,8 @@ in
         enable = true;
 
         settings = {
-          nixpkgs = {
-            expr = "import <nixpkgs> {}";
-          };
-          formatting = {
-            command = [ "nixpkgs-fmt" ];
-          };
+          nixpkgs = { expr = "import <nixpkgs> {}"; };
+          formatting = { command = [ "nixpkgs-fmt" ]; };
           options = {
             nixos = {
               expr = ''

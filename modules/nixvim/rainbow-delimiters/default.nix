@@ -1,8 +1,6 @@
 { lib, ... }:
-let
-  theme = lib.spirenix.theme.nord;
-in
-{
+let theme = lib.spirenix.theme.nord;
+in {
   highlight = {
     RainbowDelimiterBlue.fg = theme.nord7;
     RainbowDelimiterOrange.fg = theme.nord12;

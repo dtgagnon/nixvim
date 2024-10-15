@@ -3,11 +3,7 @@
 let
   theme = lib.spirenix.theme.nord;
 
-  common_filetypes = [
-    "dashboard"
-    "NvimTree"
-    "Trouble"
-  ];
+  common_filetypes = [ "dashboard" "NvimTree" "Trouble" ];
 
   common_separators = {
     component_separators = {
@@ -38,13 +34,14 @@ let
     };
   };
 
-  make_mode = fg_a: common_mode // {
-    a = {
-      fg = fg_a;
-      bg = theme.nord6;
-      gui = "bold";
+  make_mode = fg_a:
+    common_mode // {
+      a = {
+        fg = fg_a;
+        bg = theme.nord6;
+        gui = "bold";
+      };
     };
-  };
 
   diff_highlight_names = [
     "diff_modified_terminal"
@@ -70,15 +67,15 @@ let
     "diff_added_insert"
   ];
 
-  diff_highlights = builtins.listToAttrs (map
-    (name: {
-      name = "lualine_b_" + name;
-      value = { fg = theme.nord6; bg = theme.nord10; };
-    })
-    diff_highlight_names);
+  diff_highlights = builtins.listToAttrs (map (name: {
+    name = "lualine_b_" + name;
+    value = {
+      fg = theme.nord6;
+      bg = theme.nord10;
+    };
+  }) diff_highlight_names);
 
-in
-{
+in {
   plugins.lualine = {
     enable = true;
 
@@ -104,12 +101,13 @@ in
     settings.sections = {
       lualine_a = [
         # Use a Lua function for custom component
-        helpers.mkRaw
-        ''
-          function()
-            return ""
-          end
-        ''
+        {
+          component = helpers.mkRaw ''
+            						function()
+            							return ""
+            						end
+                    	'';
+        }
       ];
       lualine_b = [
         # Built-in component with an icon
@@ -121,12 +119,10 @@ in
         "diff"
       ];
       lualine_c = [ "" ];
-      lualine_x = [
-        {
-          component = "diagnostics";
-          update_in_insert = true;
-        }
-      ];
+      lualine_x = [{
+        component = "diagnostics";
+        update_in_insert = true;
+      }];
       lualine_y = [ "" ];
       lualine_z = [
         "%l:%c"
@@ -140,49 +136,41 @@ in
     settings.tabline = {
       lualine_a = [ "" ];
       lualine_b = [ "" ];
-      lualine_c = [
-        {
-          component = "windows";
-          symbols = common_symbols;
+      lualine_c = [{
+        component = "windows";
+        symbols = common_symbols;
 
-          windows_color = {
-            active = {
-              fg = theme.nord6;
-              bg = theme.nord10;
-            };
-            inactive = {
-              fg = theme.nord6;
-              bg = theme.nord1;
-            };
+        windows_color = {
+          active = {
+            fg = theme.nord6;
+            bg = theme.nord10;
           };
+          inactive = {
+            fg = theme.nord6;
+            bg = theme.nord1;
+          };
+        };
 
-          separator = {
-            right = "";
-          };
-        }
-      ];
+        separator = { right = ""; };
+      }];
       lualine_x = [ "" ];
       lualine_y = [ "" ];
-      lualine_z = [
-        {
-          component = "tabs";
+      lualine_z = [{
+        component = "tabs";
 
-          tabs_color = {
-            active = {
-              fg = theme.nord6;
-              bg = theme.nord10;
-            };
-            inactive = {
-              fg = theme.nord6;
-              bg = theme.nord1;
-            };
+        tabs_color = {
+          active = {
+            fg = theme.nord6;
+            bg = theme.nord10;
           };
+          inactive = {
+            fg = theme.nord6;
+            bg = theme.nord1;
+          };
+        };
 
-          separator = {
-            left = "";
-          };
-        }
-      ];
+        separator = { left = ""; };
+      }];
     };
 
     settings.winbar = {
@@ -220,9 +208,7 @@ in
           path = 1;
           symbols = common_symbols;
 
-          separator = {
-            left = "";
-          };
+          separator = { left = ""; };
 
           color = {
             fg = theme.nord6;
@@ -256,9 +242,7 @@ in
           shorting_target = 25;
           symbols = common_symbols;
 
-          separator = {
-            left = "";
-          };
+          separator = { left = ""; };
 
           color = {
             fg = theme.nord6;
@@ -269,18 +253,17 @@ in
     };
   };
 
-  highlight = with theme; {
-    StatusLine = {
-      bg = nord0;
-    };
+  highlight = with theme;
+    {
+      StatusLine = { bg = nord0; };
 
-    lualine_b_windows_active = {
-      fg = nord6;
-      bg = nord10;
-    };
-    lualine_b_windows_inactive = {
-      fg = nord6;
-      bg = nord1;
-    };
-  } // diff_highlights;
+      lualine_b_windows_active = {
+        fg = nord6;
+        bg = nord10;
+      };
+      lualine_b_windows_inactive = {
+        fg = nord6;
+        bg = nord1;
+      };
+    } // diff_highlights;
 }

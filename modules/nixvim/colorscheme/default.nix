@@ -1,5 +1,4 @@
-{ helpers, ... }:
-{
+{ helpers, ... }: {
   extraConfigLuaPost = # lua
     ''
       do
@@ -14,7 +13,6 @@
         })
       end
     '';
-
 
   colorschemes.nord = {
     enable = true;

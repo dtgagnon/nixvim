@@ -1,10 +1,7 @@
-{helpers, ...}: {
+{ helpers, ... }: {
   keymaps = [
     {
-      mode = [
-        "n"
-        "v"
-      ];
+      mode = [ "n" "v" ];
       action = "<cmd>NvimTreeToggle<CR>";
       key = "<C-n>";
       options = {
@@ -39,9 +36,8 @@
       close = true;
     };
 
-    onAttach =
-      helpers.mkRaw # lua
-      
+    onAttach = helpers.mkRaw # lua
+
       ''
         function(bufnr)
           local api = require "nvim-tree.api"

@@ -1,5 +1,4 @@
-{ helpers, pkgs, ... }:
-{
+{ helpers, pkgs, ... }: {
   plugins.dashboard = {
     enable = true;
 

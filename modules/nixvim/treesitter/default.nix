@@ -24,10 +24,7 @@
       };
     }
     {
-      mode = [
-        "n"
-        "v"
-      ];
+      mode = [ "n" "v" ];
       action = "<cmd>InspectTree<cr>";
       key = "<leader>tP";
       options = {

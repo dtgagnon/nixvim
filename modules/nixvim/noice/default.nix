@@ -1,5 +1,4 @@
-{ helpers, pkgs, ... }:
-{
+{ helpers, pkgs, ... }: {
   extraPlugins = with pkgs.vimPlugins; [ nui-nvim ];
 
   plugins.noice = {
@@ -12,24 +11,14 @@
       long_message_to_split = true;
     };
 
-    views = {
-      popupmenu = {
-        backend = "cmp";
-      };
-    };
+    views = { popupmenu = { backend = "cmp"; }; };
 
-    notify = {
-      enabled = true;
-    };
+    notify = { enabled = true; };
 
-    messages = {
-      enabled = true;
-    };
+    messages = { enabled = true; };
 
     lsp = {
-      message = {
-        enabled = true;
-      };
+      message = { enabled = true; };
 
       progress = {
         enabled = false;
@@ -129,9 +118,7 @@
             { find = "%d more lines"; }
           ];
         };
-        opts = {
-          skip = true;
-        };
+        opts = { skip = true; };
       }
 
       {
@@ -139,26 +126,22 @@
           event = "msg_show";
           any = [
             { find = "Vim:E220"; }
-            { find = "Error detected while processing TextChangedI Autocommands"; }
+            {
+              find =
+                "Error detected while processing TextChangedI Autocommands";
+            }
           ];
         };
-        opts = {
-          skip = true;
-        };
+        opts = { skip = true; };
       }
 
       {
         filter = {
           event = "msg_show";
           kind = "emsg";
-          any = [
-            { find = "E486:"; }
-            { find = "e944"; }
-          ];
+          any = [ { find = "E486:"; } { find = "e944"; } ];
         };
-        opts = {
-          skip = true;
-        };
+        opts = { skip = true; };
       }
 
       {
@@ -170,35 +153,25 @@
             { find = " was properly removed"; }
           ];
         };
-        opts = {
-          skip = true;
-        };
+        opts = { skip = true; };
       }
 
       {
         filter = {
           event = "notify";
           kind = "error";
-          any = [
-            { find = "AST is null on this unit"; }
-          ];
+          any = [{ find = "AST is null on this unit"; }];
         };
-        opts = {
-          skip = true;
-        };
+        opts = { skip = true; };
       }
 
       {
         filter = {
           event = "notify";
           kind = "warn";
-          any = [
-            { find = "No results for "; }
-          ];
+          any = [{ find = "No results for "; }];
         };
-        opts = {
-          skip = true;
-        };
+        opts = { skip = true; };
       }
 
       {
@@ -209,9 +182,7 @@
           blocking = true;
           find = "Hop pattern";
         };
-        opts = {
-          skip = true;
-        };
+        opts = { skip = true; };
       }
 
       {

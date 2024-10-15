@@ -1,6 +1,1 @@
-{ ... }:
-{
-  lua = {
-    mkRaw = value: { __raw = value; };
-  };
-}
+{ ... }: { lua = { mkRaw = value: { __raw = value; }; }; }

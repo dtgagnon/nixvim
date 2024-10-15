@@ -1,15 +1,11 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   vimAlias = true;
   withNodeJs = true;
   withRuby = true;
 
   luaLoader.enable = true;
 
-  extraPlugins = with pkgs.vimPlugins; [
-    aider-nvim
-    vim-bufkill
-  ];
+  extraPlugins = with pkgs.vimPlugins; [ aider-nvim vim-bufkill ];
 
   globals = {
     mapleader = " ";
@@ -107,7 +103,7 @@
     {
       mode = "t";
       key = "<C-o>";
-      action = ''<C-\><C-n>'';
+      action = "<C-\\><C-n>";
       options = {
         silent = true;
         desc = "Exit terminal mode";

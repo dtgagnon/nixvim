@@ -19,8 +19,7 @@ let
     deepClone = false;
     leaveDotGit = false;
   };
-in
-{
+in {
   tree-sitter-grammars = prev.tree-sitter-grammars // {
     tree-sitter-dotbox = prev.tree-sitter.buildGrammar {
       language = "dotbox";
@@ -35,8 +34,6 @@ in
   };
 
   tree-sitter = prev.tree-sitter.override {
-    extraGrammars = {
-      inherit tree-sitter-dotbox tree-sitter-juice;
-    };
+    extraGrammars = { inherit tree-sitter-dotbox tree-sitter-juice; };
   };
 }
