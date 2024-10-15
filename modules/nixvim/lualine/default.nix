@@ -1,4 +1,4 @@
-{ helpers, lib, builtins, ... }:
+{ helpers, lib, ... }:
 
 let
   theme = lib.spirenix.theme.nord;
