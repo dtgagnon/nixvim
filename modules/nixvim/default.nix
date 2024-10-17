@@ -28,7 +28,7 @@
 
     signcolumn = "yes:1";
 
-    mouse = "";
+    mouse = "a";
 
     foldcolumn = "0";
     foldlevel = 99;
