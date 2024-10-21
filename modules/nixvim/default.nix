@@ -5,7 +5,7 @@
 
   luaLoader.enable = true;
 
-  extraPlugins = with pkgs.vimPlugins; [ aider-nvim vim-bufkill ];
+  extraPlugins = with pkgs.vimPlugins; [ /* aider-nvim */ vim-bufkill ];
 
   globals = {
     mapleader = " ";
