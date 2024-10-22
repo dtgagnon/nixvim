@@ -23,6 +23,18 @@
   #     enable_sidebar_background = true;
   #   };
   # };
+	extraConfigLuaPost =
+		''
+			do
+				local colors = require("everforest.colors")
+				vim.api.nvim_set_hl(0, "WinSeparator", {
+					fg = colors.everforest2_gui,
+				})
+				vim.api.nvim_set_hl(0, "LspInlayHint", {
+					fg = colors.everforest3_gui,
+				})
+		'';
+
   colorschemes.everforest = {
     enable = true;
     settings = {
