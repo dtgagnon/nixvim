@@ -23,7 +23,7 @@
   #     enable_sidebar_background = true;
   #   };
   # };
-	extraConfigLuaPost =
+	extraConfigLuaPost = # lua
 		''
 			do
 				local colors = require("everforest.colors")
