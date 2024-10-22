@@ -24,6 +24,21 @@
   #   };
   # };
 
+  extraConfigLuaPost = # lua
+  ''
+    do
+      -- The NixVim Nord colorscheme doesn't assign a pleasing color to the window
+      -- separator by default. Here we override it with a softer color.
+      local colors = require("everforest.colors")
+      vim.api.nvim_set_hl(0,  "WinSeparator", {
+        fg = colors.everforest2_gui,
+      })
+      vim.api.nvim_set_hl(0,  "LspInlayHint", {
+        fg = colors.everforest3_gui,
+      })
+    end
+  '';
+
   colorschemes.everforest = {
     enable = true;
     settings = {
