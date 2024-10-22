@@ -47,13 +47,13 @@
         };
       };
 
-      colors = with lib.spirenix.theme.nord; {
-        error = [ nord11 ];
-        warning = [ nord12 ];
-        info = [ nord15 ];
-        hint = [ nord10 ];
-        todo = [ nord6 ];
-        default = [ nord6 ];
+      colors = with lib.spirenix.theme.everforest; {
+        error = [ everforest1 ];
+        warning = [ everforest12 ];
+        info = [ everforest15 ];
+        hint = [ everforest10 ];
+        todo = [ everforest6 ];
+        default = [ everforest6 ];
       };
     };
   };
