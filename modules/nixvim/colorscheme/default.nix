@@ -33,6 +33,7 @@
 				vim.api.nvim_set_hl(0, "LspInlayHint", {
 					fg = colors.everforest3_gui,
 				})
+			end
 		'';
 
   colorschemes.everforest = {
