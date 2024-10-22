@@ -6,7 +6,8 @@ let
         ${body}
       end
     '';
-in {
+in
+{
   extraPackages = with pkgs; [ nixfmt-rfc-style ];
 
   extraPlugins = with pkgs.vimPlugins; [ actions-preview-nvim ];
@@ -112,7 +113,7 @@ in {
     };
 
     servers = {
-      astro.enable = true;
+      # astro.enable = true;
       clangd.enable = true;
       cmake.enable = true;
       cssls.enable = true;
@@ -124,10 +125,10 @@ in {
       gleam.enable = true;
       # gdscript.enable = true;
       gopls.enable = true;
-      graphql.enable = true;
+      # graphql.enable = true;
       helm_ls.enable = true;
       html.enable = true;
-      jsonls.enable = true;
+      # jsonls.enable = true;
       ltex.enable = true;
       lua_ls.enable = true;
       nginx_language_server.enable = true;
@@ -169,11 +170,11 @@ in {
       };
 
       sqls.enable = true;
-      tailwindcss.enable = true;
+      # tailwindcss.enable = true;
       terraformls.enable = true;
-      ts_ls.enable = true;
+      # ts_ls.enable = true;
       volar.enable = true;
-      yamlls.enable = true;
+      # yamlls.enable = true;
       zls.enable = true;
     };
   };

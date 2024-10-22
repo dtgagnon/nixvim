@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   vimAlias = true;
-#  withNodeJs = true;
+  withNodeJs = true;
   withRuby = true;
 
   luaLoader.enable = true;
