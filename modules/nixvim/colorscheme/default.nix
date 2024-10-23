@@ -1,4 +1,4 @@
-{ helpers, ... }: {
+{ nvimTheme, helpers, ... }: {
   # extraConfigLuaPost = # lua
   #   ''
   #     do
@@ -23,20 +23,20 @@
   #     enable_sidebar_background = true;
   #   };
   # };
-	extraConfigLuaPost = # lua
-		''
-			do
-				local colors = require("everforest.colors")
-				vim.api.nvim_set_hl(0, "WinSeparator", {
-					fg = colors.everforest2_gui,
-				})
-				vim.api.nvim_set_hl(0, "LspInlayHint", {
-					fg = colors.everforest3_gui,
-				})
-			end
-		'';
+  extraConfigLuaPost = # lua
+    ''
+      			do
+      				local colors = require("${nvimTheme}.colors")
+      				vim.api.nvim_set_hl(0, "WinSeparator", {
+      					fg = colors.${nvimTheme}2_gui,
+      				})
+      				vim.api.nvim_set_hl(0, "LspInlayHint", {
+      					fg = colors.${nvimTheme}3_gui,
+      				})
+      			end
+      		'';
 
-  colorschemes.everforest = {
+  colorschemes.${nvimTheme} = {
     enable = true;
     settings = {
       borders = true;

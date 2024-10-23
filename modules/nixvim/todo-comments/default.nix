@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ lib, nvimTheme, ... }: {
   plugins.todo-comments = {
     enable = true;
 
@@ -47,13 +47,13 @@
         };
       };
 
-      colors = with lib.spirenix.theme.everforest; {
-        error = [ everforest1 ];
-        warning = [ everforest12 ];
-        info = [ everforest15 ];
-        hint = [ everforest10 ];
-        todo = [ everforest6 ];
-        default = [ everforest6 ];
+      colors = with lib.spirenix.theme.${nvimTheme}; {
+        error = [ theme.${nvimTheme} 1 ];
+        warning = [ theme.${nvimTheme} 12 ];
+        info = [ theme.${nvimTheme} 15 ];
+        hint = [ theme.${nvimTheme} 10 ];
+        todo = [ theme.${nvimTheme} 6 ];
+        default = [ theme.${nvimTheme} 6 ];
       };
     };
   };

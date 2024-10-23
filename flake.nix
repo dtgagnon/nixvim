@@ -29,6 +29,8 @@
 
       alias.packages.default = "neovim";
 
+      nvimTheme = "nord";
+
       overlays = with inputs; [ nixvim.overlays.default ];
 
       outputs-builder = channels: {

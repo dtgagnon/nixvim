@@ -1,7 +1,7 @@
-{ helpers, lib, ... }:
+{ helpers, lib, nvimTheme, ... }:
 
 let
-  theme = lib.spirenix.theme.everforest;
+  theme = lib.spirenix.theme.${nvimTheme};
 
   common_filetypes = [ "dashboard" "NvimTree" "Trouble" ];
 
@@ -24,13 +24,13 @@ let
   };
 
   common_mode = {
-    b.bg = theme.everforest10;
-    c.bg = theme.everforest0;
-    x.bg = theme.everforest0;
-    y.bg = theme.everforest0;
+    b.bg = theme.${nvimTheme} 10;
+    c.bg = theme.${nvimTheme} 0;
+    x.bg = theme.${nvimTheme} 0;
+    y.bg = theme.${nvimTheme} 0;
     z = {
-      fg = theme.everforest6;
-      bg = theme.everforest10;
+      fg = theme.${nvimTheme} 6;
+      bg = theme.${nvimTheme} 10;
     };
   };
 
@@ -38,7 +38,7 @@ let
     common_mode // {
       a = {
         fg = fg_a;
-        bg = theme.everforest6;
+        bg = theme.${nvimTheme} 6;
         gui = "bold";
       };
     };
@@ -67,15 +67,18 @@ let
     "diff_added_insert"
   ];
 
-  diff_highlights = builtins.listToAttrs (map (name: {
-    name = "lualine_b_" + name;
-    value = {
-      fg = theme.everforest6;
-      bg = theme.everforest10;
-    };
-  }) diff_highlight_names);
+  diff_highlights = builtins.listToAttrs (map
+    (name: {
+      name = "lualine_b_" + name;
+      value = {
+        fg = theme.${nvimTheme} 6;
+        bg = theme.${nvimTheme} 10;
+      };
+    })
+    diff_highlight_names);
 
-in {
+in
+{
   plugins.lualine = {
     enable = true;
 
@@ -89,12 +92,12 @@ in {
 
       ignore_focus = common_filetypes;
 
-      theme = with theme; {
-        normal = make_mode everforest2;
-        insert = make_mode everforest10;
-        visual = make_mode everforest15;
-        replace = make_mode everforest12;
-        inactive = make_mode everforest10;
+      theme = {
+        normal = make_mode theme.${nvimTheme} 2;
+        insert = make_mode theme.${nvimTheme} 10;
+        visual = make_mode theme.${nvimTheme} 15;
+        replace = make_mode theme.${nvimTheme} 12;
+        inactive = make_mode theme.${nvimTheme} 10;
       };
     };
 
@@ -142,12 +145,12 @@ in {
 
         windows_color = {
           active = {
-            fg = theme.everforest6;
-            bg = theme.everforest10;
+            fg = theme.${nvimTheme} 6;
+            bg = theme.${nvimTheme} 10;
           };
           inactive = {
-            fg = theme.everforest6;
-            bg = theme.everforest1;
+            fg = theme.${nvimTheme} 6;
+            bg = theme.${nvimTheme} 1;
           };
         };
 
@@ -160,12 +163,12 @@ in {
 
         tabs_color = {
           active = {
-            fg = theme.everforest6;
-            bg = theme.everforest10;
+            fg = theme.${nvimTheme} 6;
+            bg = theme.${nvimTheme} 10;
           };
           inactive = {
-            fg = theme.everforest6;
-            bg = theme.everforest1;
+            fg = theme.${nvimTheme} 6;
+            bg = theme.${nvimTheme} 1;
           };
         };
 
@@ -197,8 +200,8 @@ in {
           icon_only = true;
 
           color = {
-            fg = theme.everforest0;
-            bg = theme.everforest6;
+            fg = theme.${nvimTheme} 0;
+            bg = theme.${nvimTheme} 6;
           };
         }
         {
@@ -211,8 +214,8 @@ in {
           separator = { left = ""; };
 
           color = {
-            fg = theme.everforest6;
-            bg = theme.everforest10;
+            fg = theme.${nvimTheme} 6;
+            bg = theme.${nvimTheme} 10;
           };
         }
       ];
@@ -231,8 +234,8 @@ in {
           icon_only = true;
 
           color = {
-            fg = theme.everforest6;
-            bg = theme.everforest1;
+            fg = theme.${nvimTheme} 6;
+            bg = theme.${nvimTheme} 1;
           };
         }
         {
@@ -245,25 +248,24 @@ in {
           separator = { left = ""; };
 
           color = {
-            fg = theme.everforest6;
-            bg = theme.everforest1;
+            fg = theme.${nvimTheme} 6;
+            bg = theme.${nvimTheme} 1;
           };
         }
       ];
     };
   };
 
-  highlight = with theme;
-    {
-      StatusLine = { bg = everforest0; };
+  highlight = {
+    StatusLine = { bg = theme.${nvimTheme} 0; };
 
-      lualine_b_windows_active = {
-        fg = everforest6;
-        bg = everforest10;
-      };
-      lualine_b_windows_inactive = {
-        fg = everforest6;
-        bg = everforest1;
-      };
-    } // diff_highlights;
+    lualine_b_windows_active = {
+      fg = theme.${nvimTheme} 6;
+      bg = theme.${nvimTheme} 10;
+    };
+    lualine_b_windows_inactive = {
+      fg = theme.${nvimTheme} 6;
+      bg = theme.${nvimTheme} 1;
+    };
+  } // diff_highlights;
 }

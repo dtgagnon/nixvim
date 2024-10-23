@@ -5,21 +5,23 @@
     cmp = {
       enable = true;
 
-      cmdline = let
-        search = {
-          mapping = helpers.mkRaw # lua
-            "cmp.mapping.preset.cmdline()";
-          sources = [{ name = "buffer"; }];
+      cmdline =
+        let
+          search = {
+            mapping = helpers.mkRaw # lua
+              "cmp.mapping.preset.cmdline()";
+            sources = [{ name = "buffer"; }];
+          };
+        in
+        {
+          "/" = search;
+          "?" = search;
+          ":" = {
+            mapping = helpers.mkRaw # lua
+              "cmp.mapping.preset.cmdline()";
+            sources = [{ name = "cmdline"; }];
+          };
         };
-      in {
-        "/" = search;
-        "?" = search;
-        ":" = {
-          mapping = helpers.mkRaw # lua
-            "cmp.mapping.preset.cmdline()";
-          sources = [{ name = "cmdline"; }];
-        };
-      };
 
       settings = {
         experimental = { ghost_text = true; };

@@ -1,12 +1,14 @@
-{ lib, ... }:
-let theme = lib.spirenix.theme.everforest;
-in {
+{ lib, nvimTheme, ... }:
+let
+  theme = lib.spirenix.theme.${nvimTheme};
+in
+{
   highlight = {
-    RainbowDelimiterBlue.fg = theme.everforest7;
-    RainbowDelimiterOrange.fg = theme.everforest12;
-    RainbowDelimiterGreen.fg = theme.everforest14;
-    RainbowDelimiterViolet.fg = theme.everforest15;
-    RainbowDelimiterCyan.fg = theme.everforest9;
+    RainbowDelimiterBlue.fg = theme.${nvimTheme} 7;
+    RainbowDelimiterOrange.fg = theme.${nvimTheme} 12;
+    RainbowDelimiterGreen.fg = theme.${nvimTheme} 14;
+    RainbowDelimiterViolet.fg = theme.${nvimTheme} 15;
+    RainbowDelimiterCyan.fg = theme.${nvimTheme} 9;
   };
 
   plugins = {
