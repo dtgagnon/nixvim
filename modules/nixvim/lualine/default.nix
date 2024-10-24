@@ -24,14 +24,14 @@ let
     newfile = " ";
   };
 
-  common_mode = {
-    b.bg = theme."${nvimTheme}10";
-    c.bg = theme."${nvimTheme}0";
-    x.bg = theme."${nvimTheme}0";
-    y.bg = theme."${nvimTheme}0";
+  common_mode = with theme; {
+    b.bg = base10;
+    c.bg = base0;
+    x.bg = base0;
+    y.bg = base0;
     z = {
-      fg = theme."${nvimTheme}6";
-      bg = theme."${nvimTheme}10";
+      fg = base6;
+      bg = base10;
     };
   };
 
@@ -39,7 +39,7 @@ let
     common_mode // {
       a = {
         fg = fg_a;
-        bg = theme."${nvimTheme}6";
+        bg = theme.base6;
         gui = "bold";
       };
     };
@@ -71,9 +71,9 @@ let
   diff_highlights = builtins.listToAttrs (map
     (name: {
       name = "lualine_b_" + name;
-      value = {
-        fg = theme."${nvimTheme}6";
-        bg = theme."${nvimTheme}10";
+      value = with theme; {
+        fg = base6;
+        bg = base10;
       };
     })
     diff_highlight_names);
@@ -93,12 +93,12 @@ in
 
       ignore_focus = common_filetypes;
 
-      theme = {
-        normal = make_mode theme."${nvimTheme}2";
-        insert = make_mode theme."${nvimTheme}10";
-        visual = make_mode theme."${nvimTheme}15";
-        replace = make_mode theme."${nvimTheme}12";
-        inactive = make_mode theme."${nvimTheme}10";
+      theme = with theme; {
+        normal = make_mode base2;
+        insert = make_mode base10;
+        visual = make_mode base15;
+        replace = make_mode base12;
+        inactive = make_mode base10;
       };
     };
 
@@ -142,13 +142,13 @@ in
         symbols = common_symbols;
 
         windows_color = {
-          active = {
-            fg = theme."${nvimTheme}6";
-            bg = theme."${nvimTheme}10";
+          active = with theme; {
+            fg = base6;
+            bg = base10;
           };
-          inactive = {
-            fg = theme."${nvimTheme}6";
-            bg = theme."${nvimTheme}1";
+          inactive = with theme; {
+            fg = base6;
+            bg = base1;
           };
         };
 
@@ -160,13 +160,13 @@ in
         component = "tabs";
 
         tabs_color = {
-          active = {
-            fg = theme."${nvimTheme}6";
-            bg = theme."${nvimTheme}10";
+          active = with theme; {
+            fg = base6;
+            bg = base10;
           };
-          inactive = {
-            fg = theme."${nvimTheme}6";
-            bg = theme."${nvimTheme}1";
+          inactive = with theme; {
+            fg = base6;
+            bg = base1;
           };
         };
 
@@ -195,9 +195,9 @@ in
           colored = false;
           icon_only = true;
 
-          color = {
-            fg = theme."${nvimTheme}0";
-            bg = theme."${nvimTheme}6";
+          color = with theme; {
+            fg = base0;
+            bg = base6;
           };
         }
         {
@@ -209,9 +209,9 @@ in
 
           separator = { left = ""; };
 
-          color = {
-            fg = theme."${nvimTheme}6";
-            bg = theme."${nvimTheme}10";
+          color = with theme; {
+            fg = base6;
+            bg = base10;
           };
         }
       ];
@@ -229,9 +229,9 @@ in
           colored = false;
           icon_only = true;
 
-          color = {
-            fg = theme."${nvimTheme}6";
-            bg = theme."${nvimTheme}1";
+          color = with theme; {
+            fg = base6;
+            bg = base1;
           };
         }
         {
@@ -243,9 +243,9 @@ in
 
           separator = { left = ""; };
 
-          color = {
-            fg = theme."${nvimTheme}6";
-            bg = theme."${nvimTheme}1";
+          color = with theme; {
+            fg = base6;
+            bg = base1;
           };
         }
       ];
@@ -253,15 +253,15 @@ in
   };
 
   highlight = {
-    StatusLine = { bg = theme."${nvimTheme}0"; };
+    StatusLine = { bg = theme.base0; };
 
-    lualine_b_windows_active = {
-      fg = theme."${nvimTheme}6";
-      bg = theme."${nvimTheme}10";
+    lualine_b_windows_active = with theme; {
+      fg = base6;
+      bg = base10;
     };
-    lualine_b_windows_inactive = {
-      fg = theme."${nvimTheme}6";
-      bg = theme."${nvimTheme}1";
+    lualine_b_windows_inactive = with theme; {
+      fg = base6;
+      bg = base1;
     };
   } // diff_highlights;
 }
