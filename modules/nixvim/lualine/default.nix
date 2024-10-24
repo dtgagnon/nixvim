@@ -119,12 +119,12 @@ in
         }
         "diff"
       ];
-      lualine_c = [{ }];
+      lualine_c = [ "" ];
       lualine_x = [{
         component = "diagnostics";
         update_in_insert = true;
       }];
-      lualine_y = [{ }];
+      lualine_y = [ "" ];
       lualine_z = [
         "%l:%c"
         {
@@ -135,8 +135,8 @@ in
     };
 
     settings.tabline = {
-      lualine_a = [{ }];
-      lualine_b = [{ }];
+      lualine_a = [ "" ];
+      lualine_b = [ "" ];
       lualine_c = [{
         component = "windows";
         symbols = common_symbols;
@@ -154,8 +154,8 @@ in
 
         separator = { right = ""; };
       }];
-      lualine_x = [{ }];
-      lualine_y = [{ }];
+      lualine_x = [ "" ];
+      lualine_y = [ "" ];
       lualine_z = [{
         component = "tabs";
 
@@ -175,8 +175,8 @@ in
     };
 
     settings.winbar = {
-      lualine_a = [{ }];
-      lualine_b = [{ }];
+      lualine_a = [ "" ];
+      lualine_b = [ "" ];
       lualine_c = [
         {
           component = helpers.mkRaw ''
@@ -187,8 +187,8 @@ in
           '';
         }
       ];
-      lualine_x = [{ }];
-      lualine_y = [{ }];
+      lualine_x = [ "" ];
+      lualine_y = [ "" ];
       lualine_z = [
         {
           component = "filetype";
@@ -218,11 +218,11 @@ in
     };
 
     settings.inactive_winbar = {
-      lualine_a = [{ }];
-      lualine_b = [{ }];
-      lualine_c = [{ }];
-      lualine_x = [{ }];
-      lualine_y = [{ }];
+      lualine_a = [ "" ];
+      lualine_b = [ "" ];
+      lualine_c = [ "" ];
+      lualine_x = [ "" ];
+      lualine_y = [ "" ];
       lualine_z = [
         {
           component = "filetype";
