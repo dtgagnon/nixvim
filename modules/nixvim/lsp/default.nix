@@ -163,11 +163,12 @@ in
       # prismals.enable = true;
       pyright.enable = true;
 
-      rust_analyzer = {
-        enable = true;
-        installCargo = true;
-        installRustc = true;
-      };
+## rust-tools plugin is deprecated and project is abandoned - check that rust_analyzer is just relational to rust-tools.
+#      rust_analyzer = {
+#        enable = true;
+#        installCargo = true;
+#        installRustc = true;
+#      };
 
       sqls.enable = true;
       # tailwindcss.enable = true;

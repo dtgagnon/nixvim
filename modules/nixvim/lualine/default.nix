@@ -25,13 +25,13 @@ let
   };
 
   common_mode = {
-    b.bg = theme.${nvimTheme} 10;
-    c.bg = theme.${nvimTheme} 0;
-    x.bg = theme.${nvimTheme} 0;
-    y.bg = theme.${nvimTheme} 0;
+    b.bg = theme."${nvimTheme}10";
+    c.bg = theme."${nvimTheme}0";
+    x.bg = theme."${nvimTheme}0";
+    y.bg = theme."${nvimTheme}0";
     z = {
-      fg = theme.${nvimTheme} 6;
-      bg = theme.${nvimTheme} 10;
+      fg = theme."${nvimTheme}6";
+      bg = theme."${nvimTheme}10";
     };
   };
 
@@ -39,7 +39,7 @@ let
     common_mode // {
       a = {
         fg = fg_a;
-        bg = theme.${nvimTheme} 6;
+        bg = theme."${nvimTheme}6";
         gui = "bold";
       };
     };
@@ -72,8 +72,8 @@ let
     (name: {
       name = "lualine_b_" + name;
       value = {
-        fg = theme.${nvimTheme} 6;
-        bg = theme.${nvimTheme} 10;
+        fg = theme."${nvimTheme}6";
+        bg = theme."${nvimTheme}10";
       };
     })
     diff_highlight_names);
@@ -94,11 +94,11 @@ in
       ignore_focus = common_filetypes;
 
       theme = {
-        normal = make_mode theme.${nvimTheme} 2;
-        insert = make_mode theme.${nvimTheme} 10;
-        visual = make_mode theme.${nvimTheme} 15;
-        replace = make_mode theme.${nvimTheme} 12;
-        inactive = make_mode theme.${nvimTheme} 10;
+        normal = make_mode theme."${nvimTheme}2";
+        insert = make_mode theme."${nvimTheme}10";
+        visual = make_mode theme."${nvimTheme}15";
+        replace = make_mode theme."${nvimTheme}12";
+        inactive = make_mode theme."${nvimTheme}10";
       };
     };
 
@@ -146,12 +146,12 @@ in
 
         windows_color = {
           active = {
-            fg = theme.${nvimTheme} 6;
-            bg = theme.${nvimTheme} 10;
+            fg = theme."${nvimTheme}6";
+            bg = theme."${nvimTheme}10";
           };
           inactive = {
-            fg = theme.${nvimTheme} 6;
-            bg = theme.${nvimTheme} 1;
+            fg = theme."${nvimTheme}6";
+            bg = theme."${nvimTheme}1";
           };
         };
 
@@ -164,12 +164,12 @@ in
 
         tabs_color = {
           active = {
-            fg = theme.${nvimTheme} 6;
-            bg = theme.${nvimTheme} 10;
+            fg = theme."${nvimTheme}6";
+            bg = theme."${nvimTheme}10";
           };
           inactive = {
-            fg = theme.${nvimTheme} 6;
-            bg = theme.${nvimTheme} 1;
+            fg = theme."${nvimTheme}6";
+            bg = theme."${nvimTheme}1";
           };
         };
 
@@ -201,8 +201,8 @@ in
           icon_only = true;
 
           color = {
-            fg = theme.${nvimTheme} 0;
-            bg = theme.${nvimTheme} 6;
+            fg = theme."${nvimTheme}0";
+            bg = theme."${nvimTheme}6";
           };
         }
         {
@@ -215,8 +215,8 @@ in
           separator = { left = ""; };
 
           color = {
-            fg = theme.${nvimTheme} 6;
-            bg = theme.${nvimTheme} 10;
+            fg = theme."${nvimTheme}6";
+            bg = theme."${nvimTheme}10";
           };
         }
       ];
@@ -235,8 +235,8 @@ in
           icon_only = true;
 
           color = {
-            fg = theme.${nvimTheme} 6;
-            bg = theme.${nvimTheme} 1;
+            fg = theme."${nvimTheme}6";
+            bg = theme."${nvimTheme}1";
           };
         }
         {
@@ -249,8 +249,8 @@ in
           separator = { left = ""; };
 
           color = {
-            fg = theme.${nvimTheme} 6;
-            bg = theme.${nvimTheme} 1;
+            fg = theme."${nvimTheme}6";
+            bg = theme."${nvimTheme}1";
           };
         }
       ];
@@ -258,15 +258,15 @@ in
   };
 
   highlight = {
-    StatusLine = { bg = theme.${nvimTheme} 0; };
+    StatusLine = { bg = theme."${nvimTheme}0"; };
 
     lualine_b_windows_active = {
-      fg = theme.${nvimTheme} 6;
-      bg = theme.${nvimTheme} 10;
+      fg = theme."${nvimTheme}6";
+      bg = theme."${nvimTheme}10";
     };
     lualine_b_windows_inactive = {
-      fg = theme.${nvimTheme} 6;
-      bg = theme.${nvimTheme} 1;
+      fg = theme."${nvimTheme}6";
+      bg = theme."${nvimTheme}1";
     };
   } // diff_highlights;
 }

@@ -1,6 +1,7 @@
 { lib, ... }:
 let
   inherit (lib.spirenix) nvimTheme;
+  theme = lib.spirenix.theme.${nvimTheme};
 in
 {
   plugins.todo-comments = {
@@ -51,13 +52,13 @@ in
         };
       };
 
-      colors = with lib.spirenix.theme.${nvimTheme}; {
-        error = [ theme.${nvimTheme} 1 ];
-        warning = [ theme.${nvimTheme} 12 ];
-        info = [ theme.${nvimTheme} 15 ];
-        hint = [ theme.${nvimTheme} 10 ];
-        todo = [ theme.${nvimTheme} 6 ];
-        default = [ theme.${nvimTheme} 6 ];
+      colors = {
+        error = [ theme."${nvimTheme}1" ];
+        warning = [ theme."${nvimTheme}12" ];
+        info = [ theme."${nvimTheme}15" ];
+        hint = [ theme."${nvimTheme}10" ];
+        todo = [ theme."${nvimTheme}6" ];
+        default = [ theme."${nvimTheme}6" ];
       };
     };
   };
