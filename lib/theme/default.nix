@@ -1,4 +1,4 @@
 { ... }:
 {
-  nvimTheme = "nord";
+  nvimTheme = "everforest";
 }
