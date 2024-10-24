@@ -104,7 +104,6 @@ in
 
     settings.sections = {
       lualine_a = [
-        # Use a Lua function for custom component
         {
           component = helpers.mkRaw ''
             						function()
@@ -114,20 +113,18 @@ in
         }
       ];
       lualine_b = [
-        # Built-in component with an icon
         {
           component = "branch";
           icon = "";
         }
-        # Simple built-in component
         "diff"
       ];
-      lualine_c = [ "" ];
+      lualine_c = [ ];
       lualine_x = [{
         component = "diagnostics";
         update_in_insert = true;
       }];
-      lualine_y = [ "" ];
+      lualine_y = [ ];
       lualine_z = [
         "%l:%c"
         {
@@ -138,8 +135,8 @@ in
     };
 
     settings.tabline = {
-      lualine_a = [ "" ];
-      lualine_b = [ "" ];
+      lualine_a = [ ];
+      lualine_b = [ ];
       lualine_c = [{
         component = "windows";
         symbols = common_symbols;
@@ -157,8 +154,8 @@ in
 
         separator = { right = ""; };
       }];
-      lualine_x = [ "" ];
-      lualine_y = [ "" ];
+      lualine_x = [ ];
+      lualine_y = [ ];
       lualine_z = [{
         component = "tabs";
 
@@ -178,12 +175,10 @@ in
     };
 
     settings.winbar = {
-      lualine_a = [ "" ];
-      lualine_b = [ "" ];
+      lualine_a = [ ];
+      lualine_b = [ ];
       lualine_c = [
-        ""
         {
-          # Custom component using Lua functions
           component = helpers.mkRaw ''
             require('nvim-navic').get_location
           '';
@@ -192,8 +187,8 @@ in
           '';
         }
       ];
-      lualine_x = [ "" ];
-      lualine_y = [ "" ];
+      lualine_x = [ ];
+      lualine_y = [ ];
       lualine_z = [
         {
           component = "filetype";
@@ -223,11 +218,11 @@ in
     };
 
     settings.inactive_winbar = {
-      lualine_a = [ "" ];
-      lualine_b = [ "" ];
-      lualine_c = [ "" ];
-      lualine_x = [ "" ];
-      lualine_y = [ "" ];
+      lualine_a = [ ];
+      lualine_b = [ ];
+      lualine_c = [ ];
+      lualine_x = [ ];
+      lualine_y = [ ];
       lualine_z = [
         {
           component = "filetype";
