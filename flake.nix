@@ -2,7 +2,7 @@
   description = "A custom neovim configuration using nixvim.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     nixvim.url = "github:nix-community/nixvim";
@@ -24,12 +24,9 @@
       inherit inputs;
       src = ./.;
       snowfall.namespace = "spirenix";
-
+     
       channels-config.allowUnfree = true;
-
       alias.packages.default = "neovim";
-
-      nvimTheme = "nord";
 
       overlays = with inputs; [ nixvim.overlays.default ];
 

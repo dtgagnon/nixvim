@@ -1,5 +1,6 @@
-{ lib, nvimTheme, ... }:
+{ lib, ... }:
 let
+  inherit (lib.spirenix) nvimTheme;
   theme = lib.spirenix.theme.${nvimTheme};
 in
 {

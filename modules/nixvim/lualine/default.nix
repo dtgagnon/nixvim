@@ -1,6 +1,7 @@
-{ helpers, lib, nvimTheme, ... }:
+{ helpers, lib, ... }:
 
 let
+  inherit (lib.spirenix) nvimTheme;
   theme = lib.spirenix.theme.${nvimTheme};
 
   common_filetypes = [ "dashboard" "NvimTree" "Trouble" ];

@@ -1,4 +1,8 @@
-{ lib, nvimTheme, ... }: {
+{ lib, ... }:
+let
+  inherit (lib.spirenix) nvimTheme;
+in
+{
   plugins.todo-comments = {
     enable = true;
 

@@ -1,4 +1,4 @@
-{ nvimTheme, ... }:
+{ ... }:
 {
-  themePath = "./${nvimTheme}/default.nix";
+  nvimTheme = "nord";
 }

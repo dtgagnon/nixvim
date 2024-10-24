@@ -1,4 +1,8 @@
-{ nvimTheme, helpers, ... }: {
+{ lib, ... }:
+let
+  inherit (lib.spirenix) nvimTheme;
+in
+{
   # extraConfigLuaPost = # lua
   #   ''
   #     do
@@ -23,6 +27,7 @@
   #     enable_sidebar_background = true;
   #   };
   # };
+
   extraConfigLuaPost = # lua
     ''
       			do
