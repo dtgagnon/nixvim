@@ -4,12 +4,12 @@ let
   theme = lib.spirenix.theme.${nvimTheme};
 in
 {
-  highlight = {
-    RainbowDelimiterBlue.fg = theme."${nvimTheme}7";
-    RainbowDelimiterOrange.fg = theme."${nvimTheme}12";
-    RainbowDelimiterGreen.fg = theme."${nvimTheme}14";
-    RainbowDelimiterViolet.fg = theme."${nvimTheme}15";
-    RainbowDelimiterCyan.fg = theme."${nvimTheme}9";
+  highlight = with theme; {
+    RainbowDelimiterBlue.fg = base07;
+    RainbowDelimiterOrange.fg = base0C;
+    RainbowDelimiterGreen.fg = base0E;
+    RainbowDelimiterViolet.fg = base0F;
+    RainbowDelimiterCyan.fg = base09;
   };
 
   plugins = {

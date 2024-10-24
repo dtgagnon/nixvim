@@ -52,13 +52,13 @@ in
         };
       };
 
-      colors = {
-        error = [ theme."${nvimTheme}1" ];
-        warning = [ theme."${nvimTheme}12" ];
-        info = [ theme."${nvimTheme}15" ];
-        hint = [ theme."${nvimTheme}10" ];
-        todo = [ theme."${nvimTheme}6" ];
-        default = [ theme."${nvimTheme}6" ];
+      colors = with theme; {
+        error = [ base01 ];
+        warning = [ base0C ];
+        info = [ base0F ];
+        hint = [ base0A ];
+        todo = [ base06 ];
+        default = [ base06 ];
       };
     };
   };

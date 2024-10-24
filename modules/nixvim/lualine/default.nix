@@ -25,13 +25,13 @@ let
   };
 
   common_mode = with theme; {
-    b.bg = base10;
-    c.bg = base0;
-    x.bg = base0;
-    y.bg = base0;
+    b.bg = base0A;
+    c.bg = base00;
+    x.bg = base00;
+    y.bg = base00;
     z = {
-      fg = base6;
-      bg = base10;
+      fg = base06;
+      bg = base0A;
     };
   };
 
@@ -39,7 +39,7 @@ let
     common_mode // {
       a = {
         fg = fg_a;
-        bg = theme.base6;
+        bg = theme.base06;
         gui = "bold";
       };
     };
@@ -72,8 +72,8 @@ let
     (name: {
       name = "lualine_b_" + name;
       value = with theme; {
-        fg = base6;
-        bg = base10;
+        fg = base06;
+        bg = base0A;
       };
     })
     diff_highlight_names);
@@ -94,11 +94,11 @@ in
       ignore_focus = common_filetypes;
 
       theme = with theme; {
-        normal = make_mode base2;
-        insert = make_mode base10;
-        visual = make_mode base15;
-        replace = make_mode base12;
-        inactive = make_mode base10;
+        normal = make_mode base02;
+        insert = make_mode base0A;
+        visual = make_mode base0F;
+        replace = make_mode base0C;
+        inactive = make_mode base0A;
       };
     };
 
@@ -143,12 +143,12 @@ in
 
         windows_color = {
           active = with theme; {
-            fg = base6;
-            bg = base10;
+            fg = base06;
+            bg = base0A;
           };
           inactive = with theme; {
-            fg = base6;
-            bg = base1;
+            fg = base06;
+            bg = base01;
           };
         };
 
@@ -161,12 +161,12 @@ in
 
         tabs_color = {
           active = with theme; {
-            fg = base6;
-            bg = base10;
+            fg = base06;
+            bg = base0A;
           };
           inactive = with theme; {
-            fg = base6;
-            bg = base1;
+            fg = base06;
+            bg = base01;
           };
         };
 
@@ -196,8 +196,8 @@ in
           icon_only = true;
 
           color = with theme; {
-            fg = base0;
-            bg = base6;
+            fg = base00;
+            bg = base06;
           };
         }
         {
@@ -210,8 +210,8 @@ in
           separator = { left = ""; };
 
           color = with theme; {
-            fg = base6;
-            bg = base10;
+            fg = base06;
+            bg = base0A;
           };
         }
       ];
@@ -230,8 +230,8 @@ in
           icon_only = true;
 
           color = with theme; {
-            fg = base6;
-            bg = base1;
+            fg = base06;
+            bg = base01;
           };
         }
         {
@@ -244,8 +244,8 @@ in
           separator = { left = ""; };
 
           color = with theme; {
-            fg = base6;
-            bg = base1;
+            fg = base06;
+            bg = base01;
           };
         }
       ];
@@ -253,15 +253,15 @@ in
   };
 
   highlight = {
-    StatusLine = { bg = theme.base0; };
+    StatusLine = { bg = theme.base00; };
 
     lualine_b_windows_active = with theme; {
-      fg = base6;
-      bg = base10;
+      fg = base06;
+      bg = base0A;
     };
     lualine_b_windows_inactive = with theme; {
-      fg = base6;
-      bg = base1;
+      fg = base06;
+      bg = base01;
     };
   } // diff_highlights;
 }
