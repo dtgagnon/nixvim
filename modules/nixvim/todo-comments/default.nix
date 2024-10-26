@@ -1,7 +1,7 @@
 { lib, ... }:
 let
-  inherit (lib.spirenix) nvimTheme;
-  theme = lib.spirenix.theme.${nvimTheme};
+  # inherit (lib.spirenix) nvimTheme;
+  theme = lib.spirenix.theme."$NVIM_THEME";
 in
 {
   plugins.todo-comments = {

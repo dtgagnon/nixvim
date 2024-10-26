@@ -1,5 +1,4 @@
 _: {
-  #still need to update these color codes -- currently still set for nord theme.
   theme.everforest = {
     base00 = "#2b3339";
     base01 = "#323c41";

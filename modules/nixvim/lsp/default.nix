@@ -113,7 +113,7 @@ in
     };
 
     servers = {
-      # astro.enable = true;
+      astro.enable = true;
       clangd.enable = true;
       cmake.enable = true;
       cssls.enable = true;
@@ -123,12 +123,12 @@ in
       eslint.enable = true;
       emmet_ls.enable = true;
       gleam.enable = true;
-      # gdscript.enable = true;
+      gdscript.enable = true;
       gopls.enable = true;
-      # graphql.enable = true;
+      graphql.enable = true;
       helm_ls.enable = true;
       html.enable = true;
-      # jsonls.enable = true;
+      jsonls.enable = true;
       ltex.enable = true;
       lua_ls.enable = true;
       nginx_language_server.enable = true;
@@ -163,19 +163,19 @@ in
       # prismals.enable = true;
       pyright.enable = true;
 
-## rust-tools plugin is deprecated and project is abandoned - check that rust_analyzer is just relational to rust-tools.
-#      rust_analyzer = {
-#        enable = true;
-#        installCargo = true;
-#        installRustc = true;
-#      };
+      ## rust-tools plugin is deprecated and project is abandoned - check that rust_analyzer is just relational to rust-tools.
+      #      rust_analyzer = {
+      #        enable = true;
+      #        installCargo = true;
+      #        installRustc = true;
+      #      };
 
       sqls.enable = true;
-      # tailwindcss.enable = true;
+      tailwindcss.enable = true;
       terraformls.enable = true;
-      # ts_ls.enable = true;
+      ts_ls.enable = true;
       volar.enable = true;
-      # yamlls.enable = true;
+      yamlls.enable = true;
       zls.enable = true;
     };
   };

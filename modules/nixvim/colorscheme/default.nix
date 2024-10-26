@@ -1,7 +1,6 @@
 { lib, ... }:
 let
-  inherit (lib.spirenix) nvimTheme;
-  themeSet = lib.spirenix.theme.${nvimTheme};
+  themeSet = lib.spirenix.theme."$NVIM_THEME";
 in
 {
   colorschemes.base16 = {
