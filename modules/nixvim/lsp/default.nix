@@ -123,7 +123,7 @@ in
       eslint.enable = true;
       emmet_ls.enable = true;
       gleam.enable = true;
-      gdscript.enable = true;
+      # gdscript.enable = true;
       gopls.enable = true;
       graphql.enable = true;
       helm_ls.enable = true;

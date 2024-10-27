@@ -1,6 +1,7 @@
-{ lib, ... }:
+{ lib, config, ... }:
 let
-  themeSet = lib.spirenix.theme."$NVIM_THEME";
+  nvimTheme = config.spirenix.theme;
+  themeSet = lib.spirenix.theme.${nvimTheme};
 in
 {
   colorschemes.base16 = {
@@ -15,30 +16,24 @@ in
       mini_completion = true;
       telescope = true;
       telescope_borders = false;
+
+      # Below is from jake hamilton config, not sure if I want to keep it
+      borders = true;
+      contrast = false;
+      disable_background = false;
+      enable_sidebar_background = true;
     };
   };
+
+  extraConfigLuaPost = ''
+    		do
+    			local colors = require("${themeSet}")
+    			vim.api.nvim_set_hl(0, "WinSeparator", {
+    				fg = colors."${nvimTheme}2_gui,
+    			})
+    			vim.api.nvim_set_hl(0, "LspInlayHint", {
+    				fg = colors."${nvimTheme}3_gui",
+    			})
+    		end
+    	'';
 }
-# extraConfigLuaPost = # lua
-#   ''
-#     do
-#       -- The NixVim Nord colorscheme doesn't assign a pleasing color to the window
-#       -- separator by default. Here we override it with a softer color.
-#       local colors = require("nord.colors")
-#       vim.api.nvim_set_hl(0,  "WinSeparator", {
-#         fg = colors.nord2_gui,
-#       })
-#       vim.api.nvim_set_hl(0,  "LspInlayHint", {
-#         fg = colors.nord3_gui,
-#       })
-#     end
-#   '';
-#
-# colorschemes.nord = {
-#   enable = true;
-#   settings = {
-#     borders = true;
-#     contrast = false;
-#     disable_background = false;
-#     enable_sidebar_background = true;
-#   };
-# };

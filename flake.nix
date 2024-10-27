@@ -9,10 +9,10 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     snowfall-lib.url = "github:snowfallorg/lib";
-    snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
+    snowfall-lib.inputs.nixpkgs.follows = "stable";
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-    pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
+    pre-commit-hooks.inputs.nixpkgs.follows = "stable";
   };
 
   # TODO: a todo
@@ -24,7 +24,7 @@
       inherit inputs;
       src = ./.;
       snowfall.namespace = "spirenix";
-     
+
       channels-config.allowUnfree = true;
       alias.packages.default = "neovim";
 

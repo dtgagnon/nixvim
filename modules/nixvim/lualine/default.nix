@@ -1,7 +1,7 @@
-{ lib, ... }:
+{ lib, config, ... }:
 let
-  # inherit (lib.spirenix);
-  theme = lib.spirenix.theme."$NVIM_THEME";
+  inherit (config.spirenix.module) nvimTheme;
+  theme = lib.spirenix.theme.${nvimTheme};
 in
 {
   plugins.lualine = {
