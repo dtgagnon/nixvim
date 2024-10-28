@@ -345,7 +345,7 @@
         "flake-compat": "flake-compat_2",
         "gitignore": "gitignore_2",
         "nixpkgs": [
-          "nixpkgs"
+          "stable"
         ],
         "nixpkgs-stable": "nixpkgs-stable"
       },
@@ -377,7 +377,7 @@
         "flake-compat": "flake-compat_3",
         "flake-utils-plus": "flake-utils-plus",
         "nixpkgs": [
-          "nixpkgs"
+          "stable"
         ]
       },
       "locked": {
