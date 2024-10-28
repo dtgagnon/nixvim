@@ -33,7 +33,6 @@ let
 
     module = {
       imports = wrapped-modules;
-
       config = lib.mkMerge [
         {
           _module.args = {
