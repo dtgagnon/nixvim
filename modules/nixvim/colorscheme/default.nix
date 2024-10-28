@@ -25,14 +25,15 @@ in
     };
   };
 
-  extraConfigLuaPost = ''
-    		do local colors = require("colors.${themeName}")
-    			vim.api.nvim_set_hl(0, "WinSeparator", {
-    				fg = colors.theme.base02_gui,
-    			})
-    			vim.api.nvim_set_hl(0, "LspInlayHint", {
-    				fg = colors.theme.base03_gui,
-    			})
-    		end
-    	'';
+	### I don't know what to do with the below section. XXXX.colors doesn't seem to be working.
+  # extraConfigLuaPost = ''
+  #   		do local colors = require("colors.${themeName}")
+  #   			vim.api.nvim_set_hl(0, "WinSeparator", {
+  #   				fg = colors.theme.base02_gui,
+  #   			})
+  #   			vim.api.nvim_set_hl(0, "LspInlayHint", {
+  #   				fg = colors.theme.base03_gui,
+  #   			})
+  #   		end
+  #   	'';
 }
