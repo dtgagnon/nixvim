@@ -7,7 +7,7 @@
 let
   inherit (lib) types mkIf;
   inherit (lib.${namespace}) mkOpt mkBoolOpt;
-  cfg = config.spirenix-nvim.nixvim;
+  cfg = config.${namespace}.nixvim;
 
   availableThemes = types.enum [
     "aquarium"
