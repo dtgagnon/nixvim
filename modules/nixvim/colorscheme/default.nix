@@ -25,13 +25,12 @@ in
   };
 
   extraConfigLuaPost = ''
-    		do
-    			local colors = require("${theme}")
+    		do local colors = require("base16.colors")
     			vim.api.nvim_set_hl(0, "WinSeparator", {
-    				fg = colors."${theme.base02}"_gui,
+    				fg = colors.theme.base02_gui,
     			})
     			vim.api.nvim_set_hl(0, "LspInlayHint", {
-    				fg = colors."${theme.base03}"_gui,
+    				fg = colors.theme.base03_gui,
     			})
     		end
     	'';

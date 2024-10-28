@@ -1,0 +1,17 @@
+{ lib, ... }:
+{
+  availableThemes = lib.types.enum [
+    "aquarium"
+    "decay"
+    "edge-dark"
+    "everblush"
+    "everforest"
+    "gruvbox"
+    "jellybeans"
+    "mountain"
+    "nord"
+    "oxo-carbon"
+    "paradise"
+    "tokyonight"
+  ];
+}

@@ -1,13 +1,11 @@
 { lib
 , pkgs
 , config
-, namespace
 , ...
 }:
 let
-  inherit (lib) types mkIf;
-  inherit (lib.${namespace}) mkOpt mkBoolOpt;
-  cfg = config.${namespace}.nixvim;
+  inherit (lib) types mkIf mkOption;
+  cfg = config.spirenix-nvim.nixvim;
 
   availableThemes = types.enum [
     "aquarium"
@@ -26,8 +24,16 @@ let
 in
 {
   options.spirenix-nvim.nixvim = {
-    enable = mkBoolOpt false "Enable custom neovim config'd with nixvim";
-    themeName = mkOpt availableThemes "everforest" "Choose the base-16 neovim theme"; ## types default description
+    enable = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Enable custom neovim config'd with nixvim";
+    };
+    themeName = mkOption {
+      type = availableThemes;
+      default = "everforest";
+      description = "Choose the base-16 neovim theme";
+    };
   };
 
   config = mkIf cfg.enable {
