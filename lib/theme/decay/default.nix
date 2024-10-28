@@ -1,5 +1,5 @@
 _: {
-  theme.decay = {
+  colors.decay = {
     base00 = "#171B20";
     base01 = "#21262e";
     base02 = "#2b323b";

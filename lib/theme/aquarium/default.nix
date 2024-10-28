@@ -1,5 +1,5 @@
 _: {
-  theme.aquarium = {
+  colors.aquarium = {
     base01 = "#2c2e3e";
     base00 = "#20202A";
     base02 = "#3D4059";

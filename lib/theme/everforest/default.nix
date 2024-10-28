@@ -1,5 +1,5 @@
 _: {
-  theme.everforest = {
+  colors.everforest = {
     base00 = "#2b3339";
     base01 = "#323c41";
     base02 = "#3a4248";

@@ -7,7 +7,7 @@
 let
   inherit (lib) types mkIf;
   inherit (lib.${namespace}) mkOpt mkBoolOpt;
-  cfg = config.${namespace}.nixvim;
+  cfg = config.spirenix-nvim.nixvim;
 
   availableThemes = types.enum [
     "aquarium"
@@ -25,12 +25,12 @@ let
   ];
 in
 {
-  options.${namespace}.nixvim = {
+  options.spirenix-nvim.nixvim = {
     enable = mkBoolOpt false "Enable custom neovim config'd with nixvim";
     themeName = mkOpt availableThemes "everforest" "Choose the base-16 neovim theme"; ## types default description
   };
 
-  config.${namespace}.nixvim = mkIf cfg.enable {
+  config = mkIf cfg.enable {
     vimAlias = true;
     withNodeJs = true;
     withRuby = true;
