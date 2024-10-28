@@ -26,7 +26,7 @@ in
   };
 
   extraConfigLuaPost = ''
-    		do local colors = require("base16.colors")
+    		do local colors = require("${themeName}.colors")
     			vim.api.nvim_set_hl(0, "WinSeparator", {
     				fg = colors.theme.base02_gui,
     			})
