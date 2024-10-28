@@ -1,6 +1,7 @@
-{ lib, config, ... }:
+{ lib, ... }:
 let
-  theme = lib.spirenix-nvim.colors.${config.spirenix-nvim.nixvim.themeName};
+  inherit (lib.spirenix-nvim) themeName;
+  theme = lib.spirenix-nvim.colors.${themeName};
 in
 {
   colorschemes.base16 = {
