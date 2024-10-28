@@ -23,10 +23,12 @@
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
-      snowfall.namespace = "spirenix";
+      snowfall.namespace = "spirenix-nvim";
 
       channels-config.allowUnfree = true;
+
       alias.packages.default = "neovim";
+			alias.home.default = "nixvim";
 
       overlays = with inputs; [ nixvim.overlays.default ];
 

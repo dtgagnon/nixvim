@@ -1,13 +1,12 @@
 { lib, config, ... }:
 let
-  nvimTheme = config.spirenix.theme;
-  themeSet = lib.spirenix.theme.${nvimTheme};
+  theme = lib.spirenix-nvim.colors.${config.spirenix-nvim.nixvim.themeName};
 in
 {
   colorschemes.base16 = {
     enable = true;
     setUpBar = false;
-    colorscheme = themeSet;
+    colorscheme = theme;
     settings = {
       cmp = true;
       illuminate = true;
@@ -27,12 +26,12 @@ in
 
   extraConfigLuaPost = ''
     		do
-    			local colors = require("${themeSet}")
+    			local colors = require("${theme}")
     			vim.api.nvim_set_hl(0, "WinSeparator", {
-    				fg = colors."${nvimTheme}2_gui,
+    				fg = colors."${theme.base02}"_gui,
     			})
     			vim.api.nvim_set_hl(0, "LspInlayHint", {
-    				fg = colors."${nvimTheme}3_gui",
+    				fg = colors."${theme.base03}"_gui,
     			})
     		end
     	'';
