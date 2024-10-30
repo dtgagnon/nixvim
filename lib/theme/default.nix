@@ -7,6 +7,7 @@ _:
 #     "everblush"
 #     "everforest"
 #     "gruvbox"
+#			"gruvbox-material-dark-medium"
 #     "jellybeans"
 #     "mountain"
 #     "nord"
@@ -29,5 +30,5 @@ _:
 #   };
 # };
 {
-  themeName = "everblush";
+  themeName = "gruvbox-material-dark-medium";
 }
