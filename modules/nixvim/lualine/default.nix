@@ -165,8 +165,12 @@ in
         lualine_c = [
           {
             __raw = ''
-              require('nvim-navic').get_location
-              require('nvim-navic').is_available
+                            function ()
+              								return require('nvim-navic').get_location()
+              							end,
+                            cond = function()
+              								return require('nvim-navic').is_available()
+              							end,
             '';
           }
         ];
