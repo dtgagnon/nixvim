@@ -165,13 +165,15 @@ in
         lualine_c = [
           {
             __raw = ''
-                            function ()
+              							function ()
               								return require('nvim-navic').get_location()
               							end,
-                            cond = function()
+              						'';
+            cond = ''
+              							function()
               								return require('nvim-navic').is_available()
-              							end,
-            '';
+              							end
+              						'';
           }
         ];
         lualine_x = [ "" ];
