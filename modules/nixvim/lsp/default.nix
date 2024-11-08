@@ -136,7 +136,7 @@ in
         enable = true;
         settings = {
           nixpkgs.expr = "import <nixpkgs> { }";
-          formatting.command = "nixpkgs-fmt";
+          formatting.command = [ "nixpkgs-fmt" ];
           # Capabailities for diagnosing semantic_token highlight issues on some nix files
           capabilities = {
             offsetEncoding = [ "utf-8" "utf-16" ];
