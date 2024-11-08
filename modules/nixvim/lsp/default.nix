@@ -138,48 +138,39 @@ in
           nixpkgs.expr = "import <nixpkgs> { }";
           formatting.command = [ "nixpkgs-fmt" ];
           # Capabailities for diagnosing semantic_token highlight issues on some nix files
-          capabilities = {
-            offsetEncoding = [ "utf-8" "utf-16" ];
-            textDocument.semanticTokens = "vim.nil";
-            formats = [ "utf-8" "utf-16" ];
-            overlappingTokenSupport = false;
-            multilineTokenSupport = false;
+          options = {
+            nixos.expr = ''
+              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              						'';
+            home_manager.expr = ''
+              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              						'';
+            darwin.expr = ''
+              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              						'';
           };
         };
       };
-      options = {
-        nixos.expr = ''
-          							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
-          						'';
-        home_manager.expr = ''
-          							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
-          						'';
-        darwin.expr = ''
-          							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
-          						'';
-      };
+      nushell.enable = true;
+      perlpls.enable = true;
+      phpactor.enable = true;
+      # prismals.enable = true;
+      pyright.enable = true;
+
+      ## rust-tools plugin is deprecated and project is abandoned - check that rust_analyzer is just relational to rust-tools.
+      #      rust_analyzer = {
+      #        enable = true;
+      #        installCargo = true;
+      #        installRustc = true;
+      #      };
+
+      sqls.enable = true;
+      tailwindcss.enable = true;
+      terraformls.enable = true;
+      ts_ls.enable = true;
+      volar.enable = true;
+      yamlls.enable = true;
+      zls.enable = true;
     };
   };
-  nushell.enable = true;
-  perlpls.enable = true;
-  phpactor.enable = true;
-  # prismals.enable = true;
-  pyright.enable = true;
-
-  ## rust-tools plugin is deprecated and project is abandoned - check that rust_analyzer is just relational to rust-tools.
-  #      rust_analyzer = {
-  #        enable = true;
-  #        installCargo = true;
-  #        installRustc = true;
-  #      };
-
-  sqls.enable = true;
-  tailwindcss.enable = true;
-  terraformls.enable = true;
-  ts_ls.enable = true;
-  volar.enable = true;
-  yamlls.enable = true;
-  zls.enable = true;
-};
-};
 }
