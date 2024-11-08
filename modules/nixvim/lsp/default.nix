@@ -134,26 +134,37 @@ in
       nginx_language_server.enable = true;
       nixd = {
         enable = true;
-
         settings = {
-          nixpkgs = { expr = "import <nixpkgs> {}"; };
-          formatting = { command = [ "nixpkgs-fmt" ]; };
+          nixpkgs.expr = "import <nixpkgs> { }";
+          formatting.command = "nixpkgs-fmt";
+          # Capabailities for diagnosing semantic_token highlight issues on some nix files
+          capabilities = {
+            offsetEncoding = [ "utf-8" "utf-16" ];
+            textDocument = {
+              semanticTokens = {
+                dynamicRegistration = false;
+                requests = {
+                  range = false;
+                  full = false;
+                };
+                tokenTypes = [ ];
+                tokenModifiers = [ ];
+                formats = [ ];
+                overlappingTokenSupport = false;
+                multilineTokenSupport = false;
+              };
+            };
+          };
           options = {
-            nixos = {
-              expr = ''
-                let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
-              '';
-            };
-            home_manager = {
-              expr = ''
-                let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
-              '';
-            };
-            darwin = {
-              expr = ''
-                let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
-              '';
-            };
+            nixos.expr = ''
+              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              						'';
+            home_manager.expr = ''
+              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              						'';
+            darwin.expr = ''
+              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              						'';
           };
         };
       };
