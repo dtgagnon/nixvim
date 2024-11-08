@@ -139,7 +139,6 @@ in
           formatting.command = [ "nixpkgs-fmt" ];
           # Capabailities for diagnosing semantic_token highlight issues on some nix files
           capabilities = {
-            offsetEncoding = [ "utf-8" "utf-16" ];
             textDocument = {
               semanticTokens = {
                 dynamicRegistration = false;
