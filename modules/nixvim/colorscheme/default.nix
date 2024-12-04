@@ -9,7 +9,7 @@ in
   colorschemes.base16 = {
     enable = true;
     setUpBar = false;
-    colorscheme = lib.spirenix-nvim.colors.themeName;
+    colorscheme = themeName;
     settings = {
       cmp = true;
       illuminate = true;
@@ -31,10 +31,10 @@ in
   extraConfigLuaPost = ''
     do local colors = require("colors.${themeName}")
     	vim.api.nvim_set_hl(0, "WinSeparator", {
-    		fg = "${lib.spirenix-nvim.colors.themeName.base02}_gui",
+    		fg = ${lib.spirenix-nvim.colors."${themeName}".base02}_gui,
     	})
     	vim.api.nvim_set_hl(0, "LspInlayHint", {
-    		fg = "${lib.spirenix-nvim.colors.themeName.base03}_gui",
+    		fg = ${lib.spirenix-nvim.colors."${themeName}".base03}_gui,
     	})
     end
   '';
