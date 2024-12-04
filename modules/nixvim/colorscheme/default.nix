@@ -1,13 +1,15 @@
-{ lib, ... }:
+{
+  lib,
+  ...
+}:
 let
   inherit (lib.spirenix-nvim) themeName;
-  theme = lib.spirenix-nvim.colors.${themeName};
 in
 {
   colorschemes.base16 = {
     enable = true;
     setUpBar = false;
-    colorscheme = theme;
+    colorscheme = lib.spirenix-nvim.colors.themeName;
     settings = {
       cmp = true;
       illuminate = true;
@@ -25,15 +27,15 @@ in
     };
   };
 
-	### I don't know what to do with the below section. XXXX.colors doesn't seem to be working.
-  # extraConfigLuaPost = ''
-  #   		do local colors = require("colors.${themeName}")
-  #   			vim.api.nvim_set_hl(0, "WinSeparator", {
-  #   				fg = colors.theme.base02_gui,
-  #   			})
-  #   			vim.api.nvim_set_hl(0, "LspInlayHint", {
-  #   				fg = colors.theme.base03_gui,
-  #   			})
-  #   		end
-  #   	'';
+  ## I don't know what to do with the below section. XXXX.colors doesn't seem to be working.
+  extraConfigLuaPost = ''
+    do local colors = require("colors.${themeName}")
+    	vim.api.nvim_set_hl(0, "WinSeparator", {
+    		fg = "${lib.spirenix-nvim.colors.themeName.base02}_gui",
+    	})
+    	vim.api.nvim_set_hl(0, "LspInlayHint", {
+    		fg = "${lib.spirenix-nvim.colors.themeName.base03}_gui",
+    	})
+    end
+  '';
 }
