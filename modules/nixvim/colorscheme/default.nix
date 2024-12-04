@@ -12,12 +12,12 @@ in
     colorscheme = themeName;
     settings = {
       cmp = true;
-      illuminate = true;
+      illuminate = false;
       indentblankline = true;
       lsp_semantic = true;
       mini_completion = true;
       telescope = true;
-      telescope_borders = false;
+      telescope_borders = true;
 
       # Below is from jake hamilton config, not sure if I want to keep it
       borders = true;
@@ -27,15 +27,15 @@ in
     };
   };
 
-  ## I don't know what to do with the below section. XXXX.colors doesn't seem to be working.
-  extraConfigLuaPost = ''
-    do local colors = require("colors.${themeName}")
-    	vim.api.nvim_set_hl(0, "WinSeparator", {
-    		fg = ${lib.spirenix-nvim.colors."${themeName}".base02}_gui,
-    	})
-    	vim.api.nvim_set_hl(0, "LspInlayHint", {
-    		fg = ${lib.spirenix-nvim.colors."${themeName}".base03}_gui,
-    	})
-    end
-  '';
+  # ## I don't know what to do with the below section. XXXX.colors doesn't seem to be working.
+  # extraConfigLuaPost = ''
+  #   do local colors = require("colors.${themeName}")
+  #   	vim.api.nvim_set_hl(0, "WinSeparator", {
+  #   		fg = ${lib.spirenix-nvim.colors."${themeName}".base02}_gui,
+  #   	})
+  #   	vim.api.nvim_set_hl(0, "LspInlayHint", {
+  #   		fg = ${lib.spirenix-nvim.colors."${themeName}".base03}_gui,
+  #   	})
+  #   end
+  # '';
 }
