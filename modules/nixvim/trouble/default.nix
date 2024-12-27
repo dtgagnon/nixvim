@@ -7,7 +7,7 @@
       auto_open = false;
       auto_fold = false;
       auto_preview = false;
-      win.position = "bottom";
+      win.position = "top";
       useDiagnosticSigns = true;
 
       actionKeys = { hover = "<leader>gh"; };
