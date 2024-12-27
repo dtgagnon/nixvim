@@ -30,5 +30,5 @@ _:
 #   };
 # };
 {
-  themeName = "gruvbox";
+  themeName = "tokyonight";
 }
