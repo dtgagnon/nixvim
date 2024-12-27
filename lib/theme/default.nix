@@ -30,5 +30,5 @@ _:
 #   };
 # };
 {
-  themeName = "gruvbox-material-dark-medium";
+  themeName = "gruvbox";
 }
