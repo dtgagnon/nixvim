@@ -9,7 +9,6 @@ let
 in
 {
   extraPackages = with pkgs; [ nixfmt-rfc-style ];
-
   extraPlugins = with pkgs.vimPlugins; [ actions-preview-nvim ];
 
   extraConfigLua =
@@ -140,14 +139,14 @@ in
           # Capabailities for diagnosing semantic_token highlight issues on some nix files
           options = {
             nixos.expr = ''
-              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
-              						'';
+              let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
+            '';
             home_manager.expr = ''
-              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
-              						'';
+              let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
+            '';
             darwin.expr = ''
-              							let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
-              						'';
+              let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
+            '';
           };
         };
       };

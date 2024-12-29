@@ -1,5 +1,6 @@
-{ lib
-, ...
+{ 
+  lib,
+  ...
 }:
 let
   inherit (lib.spirenix-nvim) themeName;
@@ -165,15 +166,15 @@ in
         lualine_c = [
           {
             __raw = ''
-              							function ()
-              								return require('nvim-navic').get_location()
-              							end,
-              						'';
+              function ()
+                return require('nvim-navic').get_location()
+              end,
+            '';
             cond = ''
-              							function()
-              								return require('nvim-navic').is_available()
-              							end
-              						'';
+              function()
+                return require('nvim-navic').is_available()
+              end
+            '';
           }
         ];
         lualine_x = [ "" ];
