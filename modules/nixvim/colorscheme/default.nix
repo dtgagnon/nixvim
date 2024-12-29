@@ -8,7 +8,7 @@ in
   colorschemes.base16 = {
     enable = true;
     setUpBar = false;
-    colorscheme = themeName;
+    colorscheme = "${themeName}";
     settings = {
       cmp = true;
       illuminate = false;
