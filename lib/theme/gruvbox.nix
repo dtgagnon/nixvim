@@ -1,4 +1,4 @@
-_: {
+{
   colors.gruvbox = {
     base00 = "#1e2122";
     base01 = "#2c2f30";

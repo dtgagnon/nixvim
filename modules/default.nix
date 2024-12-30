@@ -9,26 +9,15 @@ in
   options = {
     themeName = mkOption {
       type = types.enum [
-        "aquarium"
-        "decay"
-        "edge-dark"
-        "everblush"
         "everforest"
-        "far"
+        "everforest-dark-hard"
         "gruvbox"
-        "gruvbox-dark-medium"
         "gruvbox-material-dark-medium"
-        "jellybeans"
-        "material"
-        "material-darker"
         "mountain"
         "ocean"
-        "oxocarbon"
-        "paradise"
-        "tokyonight"
-        "yoru"
+        "tokyo-night"
       ];
-      default = "gruvbox-material-dark-medium";
+      default = "ocean";
       description = "The color theme to use.";
     };
   };

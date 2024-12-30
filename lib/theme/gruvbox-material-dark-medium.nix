@@ -1,4 +1,3 @@
-_:
 {
   colors.gruvbox-material-dark-medium = {
     base00 = "#292828";
