@@ -17,8 +17,7 @@
   # NOTE: a note
   # WARN: a warning
   # HACK: a hack
-  outputs =
-    inputs:
+  outputs = inputs:
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
@@ -35,10 +34,10 @@
         checks.pre-commit-check = inputs.pre-commit-hooks.lib.${channels.nixpkgs.system}.run {
           src = ./.;
           hooks = {
-            nixfmt-rfc-style = {
+            nixfmt = {
               enable = true;
               entry = "${channels.nixpkgs.nixfmt-rfc-style}/bin/nixfmt";
-              extraPackages = [ channels.nixpkgs.hooks.nixfmt-rfc-style ];
+              extraPackages = [ channels.nixpkgs.nixfmt-rfc-style ];
             };
           };
         };

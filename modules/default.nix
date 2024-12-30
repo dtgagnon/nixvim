@@ -26,7 +26,7 @@ in
         "tokyonight"
         "yoru"
       ];
-      default = mkDefault "gruvbox";
+      default = "gruvbox";
       description = "The color theme to use.";
     };
   };
