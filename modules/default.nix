@@ -32,7 +32,7 @@ in
   };
 
   config = {
-    inherit (config) themeName;
+    # inherit (config) themeName;
   };
 }
 
