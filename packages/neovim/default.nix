@@ -8,7 +8,7 @@
 }:
 let
   raw-modules = lib.snowfall.fs.get-default-nix-files-recursive (
-    lib.snowfall.fs.get-file "/modules/nixvim/"
+    lib.snowfall.fs.get-file "/modules/"
   );
 
   wrapped-modules = builtins.map
