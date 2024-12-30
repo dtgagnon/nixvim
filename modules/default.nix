@@ -16,6 +16,8 @@ in
         "everforest"
         "far"
         "gruvbox"
+        "gruvbox-dark-medium"
+        "gruvbox-material-dark-medium"
         "jellybeans"
         "material"
         "material-darker"
@@ -26,7 +28,7 @@ in
         "tokyonight"
         "yoru"
       ];
-      default = "gruvbox";
+      default = "gruvbox-material-dark-medium";
       description = "The color theme to use.";
     };
   };
