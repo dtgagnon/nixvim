@@ -1,17 +1,19 @@
-{ lib, ... }:
+{ 
+  lib,
+  config,
+  ...
+}:
 let
-  inherit (lib.spirenix-nvim) themeName;
-  theme = lib.spirenix-nvim.colors.${themeName};
+  inherit (lib.spirenix-nvim) colors;
+  theme = colors.${config.themeName};
 in
 {
   plugins.todo-comments = {
     enable = true;
-
     settings = {
       signs = true;
-
       highlight = {
-        multiline = true;
+        multiline = false;
         pattern = ".*<(KEYWORDS)\\s*:";
         before = "fg";
       };

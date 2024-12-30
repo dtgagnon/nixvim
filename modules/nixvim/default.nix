@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ lib
+, pkgs
+, ...
+}:
 {
   vimAlias = true;
   withNodeJs = true;

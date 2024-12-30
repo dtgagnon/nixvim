@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,7 +27,6 @@
       channels-config.allowUnfree = true;
 
       alias.packages.default = "neovim";
-      alias.home.default = "nixvim";
 
       overlays = with inputs; [ nixvim.overlays.default ];
 

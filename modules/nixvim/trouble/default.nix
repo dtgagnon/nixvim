@@ -1,3 +1,4 @@
+{ lib, pkgs, config, ... }:
 {
   plugins.trouble = {
     enable = true;

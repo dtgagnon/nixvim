@@ -4,7 +4,7 @@
 
     settings = {
       current_line_blame = true;
-      trouble = config.plugins.trouble.enable;
+      trouble = true; #FIX: config.plugins.trouble.enable errors with "cannot find plugins attr set"
 
       signs = {
         add.text = "+";
