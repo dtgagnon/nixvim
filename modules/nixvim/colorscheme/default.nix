@@ -1,10 +1,10 @@
-{ 
+{
   lib,
   config,
   ...
 }:
 let
-  inherit (lib) mkOption mkDefault mkForce types;
+  inherit (lib) mkOption types;
   inherit (lib.spirenix-nvim) colors;
 in
 {
@@ -17,9 +17,10 @@ in
         "gruvbox-material-dark-medium"
         "mountain"
         "ocean"
+        "stylix"
         "tokyo-night"
       ];
-      default = "ocean";
+      default = "everforest-dark-hard";
       description = "The color theme to use.";
     };
   };

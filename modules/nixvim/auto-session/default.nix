@@ -20,4 +20,3 @@
     options = { desc = "Find Session"; };
   }];
 }
-
