@@ -48,7 +48,7 @@
     backup = false;
     undofile = true;
 
-    termguicolors = true;
+    termguicolors = false;
 
     ignorecase = true;
     smartcase = true;
