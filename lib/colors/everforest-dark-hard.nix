@@ -1,5 +1,5 @@
 {
-  colors.everforest-dark-hard = {
+  everforest-dark-hard = {
     base00 = "#272e33";
     base01 = "#2e383c";
     base02 = "#414b50";

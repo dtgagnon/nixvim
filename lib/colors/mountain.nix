@@ -1,5 +1,5 @@
 {
-  colors.mountain = {
+  mountain = {
     base00 = "#0f0f0f";
     base01 = "#151515";
     base02 = "#191919";

@@ -1,5 +1,5 @@
 {
-  colors.tokyo-night = {
+  tokyo-night = {
     base00 = "#1A1B26";
     base01 = "#3b4261";
     base02 = "#3b4261";

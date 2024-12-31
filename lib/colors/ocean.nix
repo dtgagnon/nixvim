@@ -1,5 +1,5 @@
 {
-  colors.ocean = {
+  ocean = {
     base00 = "#2b303b";
     base01 = "#343d46";
     base02 = "#4f5b66";
