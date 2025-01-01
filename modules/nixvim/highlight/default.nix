@@ -1,4 +1,8 @@
-{ config, lib, ... }:
+{ 
+  lib,
+  config,
+  ...
+}:
 let
   inherit (lib.spirenix-nvim) colors;
 in
