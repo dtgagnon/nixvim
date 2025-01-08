@@ -1,7 +1,6 @@
-{
-  lib,
-  config,
-  ...
+{ lib
+, config
+, ...
 }:
 let
   inherit (lib) mkOption types;
@@ -11,6 +10,10 @@ in
   options = {
     themeName = mkOption {
       type = types.enum [
+        "catppuccin-latte"
+        "catppuccin-frappe"
+        "catppuccin-macchiato"
+        "catppuccin-mocha"
         "everforest"
         "everforest-dark-hard"
         "gruvbox"
@@ -20,7 +23,7 @@ in
         "stylix"
         "tokyo-night"
       ];
-      default = "everforest-dark-hard";
+      default = "catppuccin-frappe";
       description = "The color theme to use.";
     };
   };
@@ -44,10 +47,6 @@ in
 }
 
 # 		"catppuccin"
-# 		"catppuccin-frappe"
-# 		"catppuccin-latte"
-# 		"catppuccin-macchiato"
-# 		"catppuccin-mocha"
 # 		"darcula"
 # 		"dracula"
 # 		"espresso"
