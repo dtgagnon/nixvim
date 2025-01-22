@@ -15,10 +15,10 @@ in
           normal = {
             a = {
               fg = theme.base05;
-              bg = theme.base01;
+              bg = theme.base03;
               gui = "bold";
             };
-            b.bg = theme.base03;
+            b.bg = theme.base01;
             c.bg = theme.base00;
             x.bg = theme.base00;
             y.bg = theme.base00;
@@ -29,17 +29,17 @@ in
           };
           insert = {
             a = {
-              fg = theme.base0A;
+              fg = theme.base0B;
               bg = theme.base01;
               gui = "bold";
             };
-            b.bg = theme.base03;
+            b.bg = theme.base01;
             c.bg = theme.base00;
             x.bg = theme.base00;
             y.bg = theme.base00;
             z = {
               fg = theme.base06;
-              bg = theme.base03;
+              bg = theme.base01;
             };
           };
           visual = {
@@ -48,13 +48,13 @@ in
               bg = theme.base01;
               gui = "bold";
             };
-            b.bg = theme.base03;
+            b.bg = theme.base01;
             c.bg = theme.base00;
             x.bg = theme.base00;
             y.bg = theme.base00;
             z = {
               fg = theme.base06;
-              bg = theme.base03;
+              bg = theme.base01;
             };
           };
         };
@@ -106,10 +106,10 @@ in
         ];
         lualine_y = [ "" ];
         lualine_z = [
-          "%l:%c"
           {
-            __unkeyed = "location";
+            __unkeyed = "progress";
           }
+          "%l:%c"
           {
             __unkeyed = "fileformat";
             icon_only = true;
@@ -123,10 +123,10 @@ in
           {
             __unkeyed = "windows";
             symbols = {
-              modified = " ";
-              readonly = " ";
-              unnamed = " ";
-              newfile = " ";
+              modified = " ";
+              readonly = " ";
+              unnamed = " ";
+              newfile = " ";
             };
             windows_color = {
               active = {
@@ -150,12 +150,12 @@ in
             __unkeyed = "tabs";
             tabs_color = {
               active = {
-                fg = theme.base0A;
-                bg = theme.base03;
+                fg = theme.base06;
+                bg = theme.base01;
               };
               inactive = {
-                fg = theme.base01;
-                bg = theme.base03;
+                fg = theme.base00;
+                bg = theme.base01;
               };
             };
             separator = {
@@ -191,7 +191,7 @@ in
             icon_only = true;
 
             color = with theme; {
-              fg = base00;
+              fg = base01;
               bg = base06;
             };
           }
@@ -201,17 +201,17 @@ in
             shorting_target = 25;
             path = 1;
             symbols = {
-              modified = " ";
-              readonly = " ";
-              unnamed = " ";
-              newfile = " ";
+              modified = "";
+              readonly = "";
+              unnamed = "";
+              newfile = "";
             };
 
             separator = { left = ""; };
 
             color = with theme; {
               fg = base06;
-              bg = base00;
+              bg = base01;
             };
           }
         ];
