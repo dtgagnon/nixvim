@@ -1,7 +1,6 @@
-{ 
-  lib,
-  config,
-  ...
+{ lib
+, config
+, ...
 }:
 let
   inherit (lib.spirenix-nvim) colors;
@@ -15,17 +14,17 @@ in
         theme = {
           normal = {
             a = {
-              fg = theme.base02;
-              bg = theme.base06;
+              fg = theme.base05;
+              bg = theme.base01;
               gui = "bold";
             };
-            b.bg = theme.base0A;
+            b.bg = theme.base00;
             c.bg = theme.base00;
             x.bg = theme.base00;
             y.bg = theme.base00;
             z = {
               fg = theme.base06;
-              bg = theme.base0A;
+              bg = theme.base01;
             };
           };
           insert = {
@@ -45,7 +44,7 @@ in
           };
           visual = {
             a = {
-              fg = theme.base0F;
+              fg = theme.base03;
               bg = theme.base06;
               gui = "bold";
             };
@@ -55,7 +54,7 @@ in
             y.bg = theme.base00;
             z = {
               fg = theme.base06;
-              bg = theme.base0A;
+              bg = theme.base01;
             };
           };
         };
@@ -127,7 +126,7 @@ in
             windows_color = {
               active = {
                 fg = theme.base06;
-                bg = theme.base0A;
+                bg = theme.base02;
               };
               inactive = {
                 fg = theme.base06;
@@ -207,7 +206,7 @@ in
 
             color = with theme; {
               fg = base06;
-              bg = base0A;
+              bg = base00;
             };
           }
         ];
@@ -226,8 +225,8 @@ in
             icon_only = true;
 
             color = with theme; {
-              fg = base06;
-              bg = base01;
+              fg = base04;
+              bg = base00;
             };
           }
           {
