@@ -18,7 +18,7 @@ in
       config = {
         disable_move = true;
 
-        header = map (line: "%#DashboardHeader#${line}%*") [
+        header = [
           "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡕⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
           "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠙⠇⠧⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
           "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⢠⠤⠁⢸⡄⠀⠉⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
@@ -114,6 +114,6 @@ in
 
   # highlight group definition
   extraConfigLua = ''
-    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "${theme.base0F}" })
+    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "${theme.base08}" })
   '';
 }
