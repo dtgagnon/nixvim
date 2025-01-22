@@ -1,16 +1,5 @@
 {
-  plugins = {
-    which-key = {
-      enable = true;
-      plugins = {
-        mini = {
-          enable = true;
-          icons = true;
-        };
-      };
-    };
-  };
-
+  plugins.which-key.enable = true;
   keymaps = [
     {
       mode = [ "n" "v" ];
