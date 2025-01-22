@@ -1,4 +1,4 @@
-{ helpers, config, ... }: {
+{ helpers, ... }: {
   plugins.gitsigns = {
     enable = true;
 

@@ -18,7 +18,7 @@ in
               bg = theme.base01;
               gui = "bold";
             };
-            b.bg = theme.base00;
+            b.bg = theme.base03;
             c.bg = theme.base00;
             x.bg = theme.base00;
             y.bg = theme.base00;
@@ -30,31 +30,31 @@ in
           insert = {
             a = {
               fg = theme.base0A;
-              bg = theme.base06;
+              bg = theme.base01;
               gui = "bold";
             };
-            b.bg = theme.base0A;
+            b.bg = theme.base03;
             c.bg = theme.base00;
             x.bg = theme.base00;
             y.bg = theme.base00;
             z = {
               fg = theme.base06;
-              bg = theme.base0A;
+              bg = theme.base03;
             };
           };
           visual = {
             a = {
               fg = theme.base03;
-              bg = theme.base06;
+              bg = theme.base01;
               gui = "bold";
             };
-            b.bg = theme.base0A;
+            b.bg = theme.base03;
             c.bg = theme.base00;
             x.bg = theme.base00;
             y.bg = theme.base00;
             z = {
               fg = theme.base06;
-              bg = theme.base01;
+              bg = theme.base03;
             };
           };
         };
@@ -90,6 +90,11 @@ in
           }
           {
             __unkeyed = "diff";
+            symbols = {
+              added = " ";
+              modified = " ";
+              removed = " ";
+            };
           }
         ];
         lualine_c = [ "" ];
@@ -118,8 +123,8 @@ in
           {
             __unkeyed = "windows";
             symbols = {
-              modified = "";
-              readonly = "";
+              modified = " ";
+              readonly = " ";
               unnamed = " ";
               newfile = " ";
             };
@@ -145,12 +150,12 @@ in
             __unkeyed = "tabs";
             tabs_color = {
               active = {
-                fg = theme.base06;
-                bg = theme.base0A;
+                fg = theme.base0A;
+                bg = theme.base03;
               };
               inactive = {
-                fg = theme.base06;
-                bg = theme.base01;
+                fg = theme.base01;
+                bg = theme.base03;
               };
             };
             separator = {
@@ -196,10 +201,10 @@ in
             shorting_target = 25;
             path = 1;
             symbols = {
-              modified = "";
-              readonly = "";
-              unnamed = " ";
-              newfile = " ";
+              modified = " ";
+              readonly = " ";
+              unnamed = " ";
+              newfile = " ";
             };
 
             separator = { left = ""; };
