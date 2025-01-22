@@ -1,4 +1,4 @@
-{ lib, config, ... }: 
+{ lib, config, ... }:
 let
   inherit (lib.spirenix-nvim) colors;
   theme = colors.${config.themeName};
@@ -114,6 +114,6 @@ in
 
   # highlight group definition
   extraConfigLua = ''
-    vim.api.nvim_set_hl(0, "dashcol", { fg = "#${theme.base0F}" })
+    vim.api.nvim_set_hl(0, "dashcol", { fg = "${theme.base0F}" })
   '';
 }
