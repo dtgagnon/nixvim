@@ -1,16 +1,20 @@
-{ helpers, pkgs, ... }: {
+{ ... }: {
   plugins.dashboard = {
     enable = true;
+    autoLoad = true;
 
     settings = {
       change_to_vcs_root = true;
       shortcut_type = "letter";
-
       hide = {
-        statusline = true;
         tabline = true;
+        statusline = true;
       };
-
+      highlight = {
+        header = {
+          fg = "#FFF222";  #Default white color
+        };
+      };
       config = {
         disable_move = true;
 
@@ -64,7 +68,7 @@
           cwd_only = true;
           icon = " ";
           label = "Recent Files";
-          limit = 10;
+          limit = 5;
         };
 
         packages.enable = false;
@@ -75,7 +79,7 @@
           action = "e ";
           icon = "󰉋 ";
           label = "Projects";
-          limit = 8;
+          limit = 3;
         };
 
         shortcut = [
