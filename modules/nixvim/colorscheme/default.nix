@@ -23,7 +23,7 @@ in
         "stylix"
         "tokyo-night"
       ];
-      default = "catppuccin-frappe";
+      default = "everforest-dark-hard";
       description = "The color theme to use.";
     };
   };
