@@ -2,7 +2,7 @@
   description = "A custom neovim configuration using nixvim.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
 
     nixvim.url = "github:nix-community/nixvim";
 
