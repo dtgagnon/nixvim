@@ -23,7 +23,10 @@
       src = ./.;
       snowfall.namespace = "spirenix-nvim";
 
-      channels-config.allowUnfree = true;
+      channels-config = {
+        allowBroken = true;
+        allowUnfree = true;
+      };
 
       alias.packages.default = "neovim";
 
