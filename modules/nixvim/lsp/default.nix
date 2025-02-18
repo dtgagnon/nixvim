@@ -124,7 +124,7 @@ in
       gleam.enable = true;
       # gdscript.enable = true;
       gopls.enable = true;
-      graphql.enable = true;
+      graphql.enable = false;
       helm_ls.enable = true;
       html.enable = true;
       jsonls.enable = true;
