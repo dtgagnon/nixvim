@@ -1,5 +1,4 @@
 { pkgs
-, inputs
 , helpers
 , ...
 }:
@@ -137,7 +136,7 @@ in
       nginx_language_server.enable = true;
       nixd = {
         enable = true;
-        package = inputs.nixd.packages.x86_64-linux.nixd;
+        package = "https:github.com/nix-community/nixd".packages.x86_64-linux.nixd;
         settings = {
           nixpkgs.expr = "import <nixpkgs> { }";
           formatting.command = [ "nixpkgs-fmt" ];
