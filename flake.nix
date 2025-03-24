@@ -6,6 +6,8 @@
 
     nixvim.url = "github:nix-community/nixvim";
 
+    nixd.url = "github:nix-community/nixd";
+
     snowfall-lib.url = "github:snowfallorg/lib";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
 

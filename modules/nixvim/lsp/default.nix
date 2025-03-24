@@ -1,4 +1,9 @@
-{ helpers, pkgs, ... }:
+{ pkgs
+, inputs
+, system
+, helpers
+, ...
+}:
 let
   thunk = body:
     helpers.mkRaw ''
@@ -133,6 +138,7 @@ in
       nginx_language_server.enable = true;
       nixd = {
         enable = true;
+        package = inputs.nixd.packages.${system}.nixd;
         settings = {
           nixpkgs.expr = "import <nixpkgs> { }";
           formatting.command = [ "nixpkgs-fmt" ];
