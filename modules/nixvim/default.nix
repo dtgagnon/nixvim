@@ -37,10 +37,11 @@
 
     mouse = "a";
 
+    foldenable = true;
     foldcolumn = "0";
     foldlevel = 99;
     foldlevelstart = 99;
-    foldenable = true;
+    foldmethod = "indent";
 
     updatetime = 50;
 
