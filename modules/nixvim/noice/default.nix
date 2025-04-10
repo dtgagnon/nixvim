@@ -12,7 +12,7 @@
         long_message_to_split = true;
       };
 
-      views = "popup";
+      views.popupmenu.backend = "cmp";
       notify.enabled = true;
       messages.enabled = true;
 
