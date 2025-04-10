@@ -12,7 +12,7 @@
         long_message_to_split = true;
       };
 
-      views.popup.backend = "nui"; # was "cmp", testing nui popup
+      views = "popup";
       notify.enabled = true;
       messages.enabled = true;
 
