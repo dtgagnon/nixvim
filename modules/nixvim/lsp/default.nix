@@ -64,7 +64,7 @@ in
 
       extra = [
         {
-          action = thunk "vim.cmd [[<cmd>LspStop<CR>]]";
+          action = thunk "vim.cmd 'LspStop'";
           key = "<leader>lx";
           options = {
             desc = "LSP: Stop";
@@ -72,7 +72,7 @@ in
           };
         }
         {
-          action = thunk "vim.cmd [[<cmd>LspStart<CR>]]";
+          action = thunk "vim.cmd 'LspStart'";
           key = "<leader>ls";
           options = {
             desc = "LSP: Start";
@@ -80,7 +80,7 @@ in
           };
         }
         {
-          action = thunk "vim.cmd [[<cmd>LspRestart<CR>]]";
+          action = thunk "vim.cmd 'LspRestart'";
           key = "<leader>lr";
           options = {
             desc = "LSP: Restart";
@@ -128,7 +128,6 @@ in
       # gdscript.enable = true;
       gopls.enable = true;
       graphql.enable = false;
-      helm_ls.enable = true;
       html.enable = true;
       jsonls.enable = true;
       ltex.enable = true;
@@ -140,18 +139,18 @@ in
         settings = {
           nixpkgs.expr = "import <nixpkgs> { }";
           formatting.command = [ "nixpkgs-fmt" ];
-          # Capabailities for diagnosing semantic_token highlight issues on some nix files
-          options = {
-            nixos.expr = ''
-              let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
-            '';
-            home_manager.expr = ''
-              let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
-            '';
-            darwin.expr = ''
-              let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
-            '';
-          };
+          # # Capabailities for diagnosing semantic_token highlight issues on some nix files
+          # options = {
+          #   nixos.expr = ''
+          #     let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
+          #   '';
+          #   home_manager.expr = ''
+          #     let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
+          #   '';
+          #   darwin.expr = ''
+          #     let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
+          #   '';
+          # };
         };
       };
       nushell.enable = true;
