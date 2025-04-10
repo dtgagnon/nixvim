@@ -12,7 +12,6 @@
         long_message_to_split = true;
       };
 
-      views.popupmenu.backend = "nui"; # was "cmp", testing nui popup
       notify.enabled = true;
       messages.enabled = true;
 
@@ -26,7 +25,7 @@
 
       popupmenu = {
         enabled = true;
-        backend = "nui";
+        backend = "cmp";
       };
 
       cmdline = {
