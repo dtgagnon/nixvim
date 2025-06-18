@@ -2,11 +2,11 @@
   "nodes": {
     "deno-temp-fix": {
       "locked": {
-        "lastModified": 1750246670,
-        "narHash": "sha256-kOvaw2kqf/Wa/IgWZytUkQYdisuzrfjROn3Ugsj8074=",
+        "lastModified": 1750273903,
+        "narHash": "sha256-hxavpp0b4l6VuXhiMm3TngVO+0gR9GiPx/i6feHNrVE=",
         "owner": "ofalvai",
         "repo": "nixpkgs",
-        "rev": "cc59cdd4c68ed164c2859448f51450e7cfb27aae",
+        "rev": "4c68c44706fce223bfb1889b46da0148e71a9f2c",
         "type": "github"
       },
       "original": {
@@ -256,11 +256,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1750258383,
-        "narHash": "sha256-w3ACZfO3uUtx3bVplLrjaXLF6vV3wIVvBEjgn6ASx/M=",
+        "lastModified": 1750283991,
+        "narHash": "sha256-Vs72Eygy7PToP9iLu+IFk0L/WYfXjHMmXn/TlNTCYHc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f186923e32c576148c1863dcb53a20d24356210f",
+        "rev": "400d14dd9e66b15f353bbd3f4a89ef3f5717f6d8",
         "type": "github"
       },
       "original": {
