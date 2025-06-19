@@ -1,3 +1,3 @@
 { channels, ... }: _: prev: {
-  deno = channels.deno-temp-fix.deno;
+  deno = channels.masterpkgs.deno;
 }
