@@ -11,14 +11,12 @@
         noremap = true;
       };
     }
-    
+
     # Buffer keybindings
     {
       mode = "n";
+      group = "Buffer";
       key = "<leader>b";
-      options = {
-        desc = "Buffer";
-      };
     }
     {
       mode = "n";
