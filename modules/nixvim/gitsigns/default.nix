@@ -43,31 +43,33 @@
             }, { mode = "n", buffer = bufnr })
 
             which_key.register({
-              { "<leader>h", group = "Git Hunk" },
-              { "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage Hunk" },
-              { "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset Hunk" },
-              { "<leader>hS", "<cmd>Gitsigns stage_buffer<cr>", desc = "Stage Buffer" },
-              { "<leader>hu", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Undo Stage Hunk" },
-              { "<leader>hR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset Buffer" },
-              { "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk" },
-              {
-                "<leader>hb",
-                function()
-                  gitsigns.blame_line { full = true }
-                end,
-                desc = "Blame Line"
+              h = {
+                name = "Git Hunk",
+                s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
+                r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
+                S = { "<cmd>Gitsigns stage_buffer<cr>", "Stage Buffer" },
+                u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk" },
+                R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
+                p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+                b = { 
+                  function()
+                    gitsigns.blame_line { full = true }
+                  end, 
+                  "Blame Line" 
+                },
+                d = { "<cmd>Gitsigns diffthis<cr>", "Diff" },
+                D = { 
+                  function()
+                    gitsigns.diffthis("~")
+                  end, 
+                  "Diff (~)" 
+                },
               },
-              { "<leader>hd", "<cmd>Gitsigns diffthis<cr>", desc = "Diff" },
-              {
-                "<leader>hD",
-                function()
-                  gitsigns.diffthis("~")
-                end,
-                desc = "Diff (~)"
-              },
-              { "<leader>t", group = "Toggle" },
-              { "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle Current Line Blame" },
-              { "<leader>td", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Toggle Deleted" }
+              t = {
+                name = "Toggle",
+                b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Current Line Blame" },
+                d = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle Deleted" },
+              }
             }, { mode = "n", prefix = "<leader>", buffer = bufnr })
           end
         '';
