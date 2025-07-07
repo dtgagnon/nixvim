@@ -23,7 +23,6 @@
     {
       mode = "n";
       key = "[c";
-      desc = "Previous hunk";
       action = helpers.mkRaw ''
         function()
           if vim.wo.diff then return "[c" end
@@ -31,11 +30,14 @@
           return "<Ignore>"
         end
       '';
+      options = {
+        desc = "Previous hunk";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "]c";
-      desc = "Next hunk";
       action = helpers.mkRaw ''
         function()
           if vim.wo.diff then return "]c" end
@@ -43,84 +45,121 @@
           return "<Ignore>"
         end
       '';
+      options = {
+        desc = "Next hunk";
+        silent = true;
+      };
     }
 
     # Git hunk operations
     {
       mode = "n";
       key = "<leader>hs";
-      desc = "Stage Hunk";
       action = "<cmd>Gitsigns stage_hunk<cr>";
+      options = {
+        desc = "Stage Hunk";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hr";
-      desc = "Reset Hunk";
       action = "<cmd>Gitsigns reset_hunk<cr>";
+      options = {
+        desc = "Reset Hunk";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hS";
-      desc = "Stage Buffer";
       action = "<cmd>Gitsigns stage_buffer<cr>";
+      options = {
+        desc = "Stage Buffer";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hu";
-      desc = "Undo Stage Hunk";
       action = "<cmd>Gitsigns undo_stage_hunk<cr>";
+      options = {
+        desc = "Undo Stage Hunk";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hR";
-      desc = "Reset Buffer";
       action = "<cmd>Gitsigns reset_buffer<cr>";
+      options = {
+        desc = "Reset Buffer";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hp";
-      desc = "Preview Hunk";
       action = "<cmd>Gitsigns preview_hunk<cr>";
+      options = {
+        desc = "Preview Hunk";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hb";
-      desc = "Blame Line";
       action = helpers.mkRaw ''
         function()
           require("gitsigns").blame_line { full = true }
         end
       '';
+      options = {
+        desc = "Blame Line";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hd";
-      desc = "Diff";
       action = "<cmd>Gitsigns diffthis<cr>";
+      options = {
+        desc = "Diff";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>hD";
-      desc = "Diff (~)";
       action = helpers.mkRaw ''
         function()
           require("gitsigns").diffthis("~")
         end
       '';
+      options = {
+        desc = "Diff (~)";
+        silent = true;
+      };
     }
 
     # Toggle options
     {
       mode = "n";
       key = "<leader>tb";
-      desc = "Toggle Current Line Blame";
       action = "<cmd>Gitsigns toggle_current_line_blame<cr>";
+      options = {
+        desc = "Toggle Current Line Blame";
+        silent = true;
+      };
     }
     {
       mode = "n";
       key = "<leader>td";
-      desc = "Toggle Deleted";
       action = "<cmd>Gitsigns toggle_deleted<cr>";
+      options = {
+        desc = "Toggle Deleted";
+        silent = true;
+      };
     }
   ];
 }
