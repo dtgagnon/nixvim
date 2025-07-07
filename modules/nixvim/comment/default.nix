@@ -5,45 +5,66 @@
   keymaps = [
     {
       mode = "n";
-      desc = "Comment";
       key = "<leader>gc";
       action = "<cmd>CommentToggleCurrentLine<cr>";
+      options = {
+        desc = "Comment";
+        silent = true;
+      };
     }
     {
       mode = "n";
-      desc = "Comment";
       key = "<leader>gb";
       action = "<cmd>CommentToggleCurrentBlock<cr>";
+      options = {
+        desc = "Comment";
+        silent = true;
+      };
     }
     {
       mode = "n";
-      desc = "Comment";
       key = "<leader>go";
       action = "<cmd>CommentInsertBelow<cr>";
+      options = {
+        desc = "Comment";
+        silent = true;
+      };
     }
     {
       mode = "n";
-      desc = "Comment";
       key = "<leader>gO";
       action = "<cmd>CommentInsertAbove<cr>";
+      options = {
+        desc = "Comment";
+        silent = true;
+      };
     }
     {
       mode = "n";
-      desc = "Comment";
       key = "<leader>gA";
       action = "<cmd>CommentInsertEndOfLine<cr>";
+      options = {
+        desc = "Comment";
+        silent = true;
+      };
     }
     {
       mode = "v";
-      desc = "Comment";
       key = "<leader>gc";
       action = "<cmd>CommentToggle<cr>";
+      options = {
+        desc = "Comment";
+        silent = true;
+      };
     }
     {
       mode = "v";
-      desc = "Comment";
       key = "<leader>gb";
       action = "<cmd>CommentToggle<cr>";
+      options = {
+        desc = "Comment";
+        silent = true;
+      };
     }
   ];
 }
