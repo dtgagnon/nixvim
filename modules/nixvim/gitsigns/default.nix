@@ -14,65 +14,113 @@
         changedelete.text = "~";
         untracked.text = "┆";
       };
-
-      on_attach = helpers.mkRaw # lua
-        ''
-          function(bufnr)
-            local which_key = require("which-key")
-            local gitsigns = require("gitsigns")
-
-            which_key.register({
-              {
-                "[c",
-                function()
-                  if vim.wo.diff then return "[c" end
-                  vim.schedule(function() gitsigns.prev_hunk() end)
-                  return "<Ignore>"
-                end,
-                desc = "Previous hunk"
-              },
-              {
-                "]c",
-                function()
-                  if vim.wo.diff then return "]c" end
-                  vim.schedule(function() gitsigns.next_hunk() end)
-                  return "<Ignore>"
-                end,
-                desc = "Next hunk"
-              }
-            }, { mode = "n", buffer = bufnr })
-
-            which_key.register({
-              h = {
-                name = "Git Hunk",
-                s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
-                r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
-                S = { "<cmd>Gitsigns stage_buffer<cr>", "Stage Buffer" },
-                u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk" },
-                R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
-                p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
-                b = { 
-                  function()
-                    gitsigns.blame_line { full = true }
-                  end, 
-                  "Blame Line" 
-                },
-                d = { "<cmd>Gitsigns diffthis<cr>", "Diff" },
-                D = { 
-                  function()
-                    gitsigns.diffthis("~")
-                  end, 
-                  "Diff (~)" 
-                },
-              },
-              t = {
-                name = "Toggle",
-                b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Current Line Blame" },
-                d = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle Deleted" },
-              }
-            }, { mode = "n", prefix = "<leader>", buffer = bufnr })
-          end
-        '';
     };
   };
+
+  # Gitsigns keymaps in declarative format
+  keymaps = [
+    # Navigation between hunks
+    {
+      mode = "n";
+      key = "[c";
+      desc = "Previous hunk";
+      action = helpers.mkRaw ''
+        function()
+          if vim.wo.diff then return "[c" end
+          vim.schedule(function() require("gitsigns").prev_hunk() end)
+          return "<Ignore>"
+        end
+      '';
+    }
+    {
+      mode = "n";
+      key = "]c";
+      desc = "Next hunk";
+      action = helpers.mkRaw ''
+        function()
+          if vim.wo.diff then return "]c" end
+          vim.schedule(function() require("gitsigns").next_hunk() end)
+          return "<Ignore>"
+        end
+      '';
+    }
+
+    # Git hunk operations
+    {
+      mode = "n";
+      key = "<leader>hs";
+      desc = "Stage Hunk";
+      action = "<cmd>Gitsigns stage_hunk<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hr";
+      desc = "Reset Hunk";
+      action = "<cmd>Gitsigns reset_hunk<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hS";
+      desc = "Stage Buffer";
+      action = "<cmd>Gitsigns stage_buffer<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hu";
+      desc = "Undo Stage Hunk";
+      action = "<cmd>Gitsigns undo_stage_hunk<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hR";
+      desc = "Reset Buffer";
+      action = "<cmd>Gitsigns reset_buffer<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hp";
+      desc = "Preview Hunk";
+      action = "<cmd>Gitsigns preview_hunk<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hb";
+      desc = "Blame Line";
+      action = helpers.mkRaw ''
+        function()
+          require("gitsigns").blame_line { full = true }
+        end
+      '';
+    }
+    {
+      mode = "n";
+      key = "<leader>hd";
+      desc = "Diff";
+      action = "<cmd>Gitsigns diffthis<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>hD";
+      desc = "Diff (~)";
+      action = helpers.mkRaw ''
+        function()
+          require("gitsigns").diffthis("~")
+        end
+      '';
+    }
+
+    # Toggle options
+    {
+      mode = "n";
+      key = "<leader>tb";
+      desc = "Toggle Current Line Blame";
+      action = "<cmd>Gitsigns toggle_current_line_blame<cr>";
+    }
+    {
+      mode = "n";
+      key = "<leader>td";
+      desc = "Toggle Deleted";
+      action = "<cmd>Gitsigns toggle_deleted<cr>";
+    }
+  ];
 }

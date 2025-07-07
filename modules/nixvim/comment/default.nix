@@ -2,28 +2,49 @@
 {
   plugins.comment.enable = true;
 
-  extraConfigLua = ''
-    local wk = require("which-key")
-    
-    -- Register normal mode keymaps
-    wk.register({
-      g = {
-        name = "Comment", -- Group name
-        c = { "<cmd>CommentToggleCurrentLine<cr>", "Toggle Comment (Line)" },
-        b = { "<cmd>CommentToggleCurrentBlock<cr>", "Toggle Comment (Block)" },
-        o = { "<cmd>CommentInsertBelow<cr>", "Comment Insert Below" },
-        O = { "<cmd>CommentInsertAbove<cr>", "Comment Insert Above" },
-        A = { "<cmd>CommentInsertEndOfLine<cr>", "Comment Insert End of Line" },
-      }
-    }, { mode = "n" })
-    
-    -- Register visual mode keymaps
-    wk.register({
-      g = {
-        name = "Comment", -- Group name
-        c = { "<cmd>CommentToggle<cr>", "Toggle Comment (Selection)" },
-        b = { "<cmd>CommentToggle<cr>", "Toggle Comment (Selection)" },
-      }
-    }, { mode = "v" })
-  '';
+  keymaps = [
+    {
+      mode = "n";
+      desc = "Comment";
+      key = "<leader>gc";
+      action = "<cmd>CommentToggleCurrentLine<cr>";
+    }
+    {
+      mode = "n";
+      desc = "Comment";
+      key = "<leader>gb";
+      action = "<cmd>CommentToggleCurrentBlock<cr>";
+    }
+    {
+      mode = "n";
+      desc = "Comment";
+      key = "<leader>go";
+      action = "<cmd>CommentInsertBelow<cr>";
+    }
+    {
+      mode = "n";
+      desc = "Comment";
+      key = "<leader>gO";
+      action = "<cmd>CommentInsertAbove<cr>";
+    }
+    {
+      mode = "n";
+      desc = "Comment";
+      key = "<leader>gA";
+      action = "<cmd>CommentInsertEndOfLine<cr>";
+    }
+    {
+      mode = "v";
+      desc = "Comment";
+      key = "<leader>gc";
+      action = "<cmd>CommentToggle<cr>";
+    }
+    {
+      mode = "v";
+      desc = "Comment";
+      key = "<leader>gb";
+      action = "<cmd>CommentToggle<cr>";
+    }
+  ];
 }
+    
