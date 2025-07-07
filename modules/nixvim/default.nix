@@ -26,6 +26,7 @@
 
     tabstop = 2;
     shiftwidth = 2;
+    expandtab = true;
 
     wrap = true;
     linebreak = true;
