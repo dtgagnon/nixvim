@@ -15,6 +15,13 @@
     # Buffer keybindings
     {
       mode = "n";
+      key = "<leader>b";
+      options = {
+        desc = "Buffer";
+      };
+    }
+    {
+      mode = "n";
       key = "<space>bn";
       action = "<cmd>BufferNext<cr>";
       options = {
