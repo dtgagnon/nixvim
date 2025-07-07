@@ -105,6 +105,24 @@
 
       routes = [
         {
+          filter = { event = "lsp"; kind = "popup"; };
+          routes = [
+            {
+              filter = { "vim.lsp.util.convert_input_to_markdown_lines" };
+              view = "hover";
+            }
+            {
+              filter = { "vim.lsp.util.stylize_markdown" };
+              view = "hover";
+            }
+            {
+              filter = { "cmp.entry.get_documentation" };
+              view = "hover";
+            }
+          ];
+        }
+
+        {
           filter = {
             event = "msg_show";
             any = [

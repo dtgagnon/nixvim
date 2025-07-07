@@ -1,5 +1,5 @@
 { helpers, pkgs, ... }: {
-  extraPackages = with pkgs; [ ripgrep ];
+  extraPackages = with pkgs; [ ripgrep fd ];
 
   plugins.telescope = {
     enable = true;

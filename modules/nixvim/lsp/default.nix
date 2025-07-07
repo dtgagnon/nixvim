@@ -56,7 +56,7 @@ in
       lspBuf = {
         K = "hover";
         gh = "hover";
-        gr = "references";
+        gR = "references";
         gd = "definition";
         gi = "implementation";
         gD = "type_definition";

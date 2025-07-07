@@ -42,7 +42,7 @@
     foldcolumn = "0";
     foldlevel = 99;
     foldlevelstart = 99;
-    foldmethod = "indent";
+    foldmethod = "syntax";
 
     updatetime = 50;
 
