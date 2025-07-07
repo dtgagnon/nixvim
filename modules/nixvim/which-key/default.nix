@@ -16,6 +16,7 @@
     {
       mode = "n";
       key = "<leader>b";
+      action = "";  # Empty action for prefix/group
       options = {
         noremap = true;
         silent = true;
