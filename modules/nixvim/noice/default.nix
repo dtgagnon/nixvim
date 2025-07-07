@@ -108,15 +108,15 @@
           filter = { event = "lsp"; kind = "popup"; };
           routes = [
             {
-              filter = { "vim.lsp.util.convert_input_to_markdown_lines" };
+              filter = { find = "vim.lsp.util.convert_input_to_markdown_lines"; };
               view = "hover";
             }
             {
-              filter = { "vim.lsp.util.stylize_markdown" };
+              filter = { find = "vim.lsp.util.stylize_markdown"; };
               view = "hover";
             }
             {
-              filter = { "cmp.entry.get_documentation" };
+              filter = { find = "cmp.entry.get_documentation"; };
               view = "hover";
             }
           ];
