@@ -15,12 +15,16 @@
     # Buffer keybindings
     {
       mode = "n";
-      group = "Buffer";
       key = "<leader>b";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Buffer";
+      };
     }
     {
       mode = "n";
-      key = "<space>bn";
+      key = "<leader>bn";
       action = "<cmd>BufferNext<cr>";
       options = {
         desc = "Next buffer";
@@ -30,7 +34,7 @@
     }
     {
       mode = "n";
-      key = "<space>bu";
+      key = "<leader>bu";
       action = "<cmd>BufferUndo<cr>";
       options = {
         desc = "Undo buffer changes";
