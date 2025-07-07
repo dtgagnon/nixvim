@@ -4,7 +4,7 @@
     {
       mode = [ "n" "v" ];
       action = "<cmd>WhichKey<cr>";
-      key = "<leader>";
+      key = "<leader>?";
       options = {
         desc = "Show available keys";
         silent = true;
