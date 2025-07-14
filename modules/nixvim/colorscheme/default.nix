@@ -32,7 +32,7 @@ in
     colorschemes.base16 = {
       enable = true;
       setUpBar = false;
-      colorscheme = colors.${config.themeName};
+      colorscheme = null; /* colors.${config.themeName}; */
       settings = {
         cmp = true;
         illuminate = false;
