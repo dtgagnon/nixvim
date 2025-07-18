@@ -5,7 +5,7 @@
     settings = {
       bypass_save_filetypes = [ "dashboard" "nvim-tree" ];
 
-      auto_restore = true;
+      auto_restore = false;
       auto_save = true;
       enabled = true;
       auto_create = true;
