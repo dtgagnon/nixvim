@@ -20,7 +20,7 @@ in
   extraConfigLuaPre = ''
     do
       local diagnostic_signs = { Error = "", Warn = "", Hint = "", Info = "" }
-      
+
       -- Modern way to configure diagnostic signs
       vim.diagnostic.config({
         underline = true,
