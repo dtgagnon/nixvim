@@ -9,7 +9,7 @@ in
 {
   options = {
     themeName = mkOption {
-      type = types.enum [
+      type = types.nullOr (types.enum [
         "catppuccin-latte"
         "catppuccin-frappe"
         "catppuccin-macchiato"
@@ -22,8 +22,8 @@ in
         "ocean"
         "stylix"
         "tokyo-night"
-      ];
-      default = "everforest-dark-hard";
+      ]);
+      default = null;
       description = "The color theme to use.";
     };
   };
@@ -32,7 +32,7 @@ in
     colorschemes.base16 = {
       enable = true;
       setUpBar = false;
-      colorscheme = null; /* colors.${config.themeName}; */
+      colorscheme = colors.${config.themeName};
       settings = {
         cmp = true;
         illuminate = false;
