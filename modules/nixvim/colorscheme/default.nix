@@ -22,9 +22,8 @@ in
         "ocean"
         "stylix"
         "tokyo-night"
-        ""
       ];
-      default = "";
+      default = "stylix";
       description = "The color theme to use.";
     };
   };
