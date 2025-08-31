@@ -9,7 +9,7 @@ in
 {
   options = {
     themeName = mkOption {
-      type = types.nullOr (types.enum [
+      type = types.enum [
         "catppuccin-latte"
         "catppuccin-frappe"
         "catppuccin-macchiato"
@@ -22,8 +22,9 @@ in
         "ocean"
         "stylix"
         "tokyo-night"
-      ]);
-      default = null;
+        ""
+      ];
+      default = "";
       description = "The color theme to use.";
     };
   };
