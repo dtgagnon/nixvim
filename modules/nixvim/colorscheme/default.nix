@@ -23,7 +23,7 @@ in
         "stylix"
         "tokyo-night"
       ];
-      default = "stylix";
+      default = "gruvbox-material-dark-medium";
       description = "The color theme to use.";
     };
   };
