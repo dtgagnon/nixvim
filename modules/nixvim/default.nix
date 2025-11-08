@@ -12,6 +12,8 @@
   extraPlugins = with pkgs.vimPlugins; [
     aider-nvim
     vim-bufkill
+    claudecode-nvim
+    snacks-nvim
   ];
 
   globals = {
