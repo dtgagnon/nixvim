@@ -2,6 +2,6 @@
   plugins.coverage = {
     enable = true;
 
-    autoReload = true;
+    settings.auto_reload = true;
   };
 }

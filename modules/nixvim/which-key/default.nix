@@ -2,7 +2,10 @@
   plugins.which-key.enable = true;
   keymaps = [
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       action = "<cmd>WhichKey<cr>";
       key = "<leader>?";
       options = {

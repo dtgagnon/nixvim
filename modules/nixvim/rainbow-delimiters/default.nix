@@ -19,7 +19,7 @@ in
   plugins = {
     rainbow-delimiters = {
       enable = true;
-      highlight = [
+      settings.highlight = [
         "RainbowDelimiterViolet"
         "RainbowDelimiterBlue"
         "RainbowDelimiterGreen"

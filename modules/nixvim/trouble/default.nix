@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 {
   plugins.trouble = {
     enable = true;
@@ -11,7 +16,9 @@
       win.position = "top";
       useDiagnosticSigns = true;
 
-      actionKeys = { hover = "<leader>gh"; };
+      actionKeys = {
+        hover = "<leader>gh";
+      };
     };
   };
 
@@ -20,13 +27,17 @@
       mode = "n";
       action = "<cmd>Trouble diagnostics toggle<cr>";
       key = "<leader>tt";
-      options = { desc = "Toggle trouble"; };
+      options = {
+        desc = "Toggle trouble";
+      };
     }
     {
       mode = "n";
       action = "<cmd>Trouble todo toggle<cr>";
       key = "<leader>tn";
-      options = { desc = "Toggle notes"; };
+      options = {
+        desc = "Toggle notes";
+      };
     }
   ];
 }

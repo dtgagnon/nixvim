@@ -36,7 +36,7 @@
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixfmt-rfc-style;
-        checks.pre-commit-check = inputs.pre-commit-hooks.lib.${channels.nixpkgs.system}.run {
+        checks.pre-commit-check = inputs.pre-commit-hooks.lib.${channels.nixpkgs.stdenv.hostPlatform.system}.run {
           src = ./.;
           hooks = {
             nixfmt-rfc-style = {
