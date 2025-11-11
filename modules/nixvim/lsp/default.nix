@@ -120,6 +120,7 @@ in
 
     servers = {
       astro.enable = true;
+      bashls.enable = true;
       clangd.enable = true;
       cmake.enable = true;
       cssls.enable = true;
@@ -136,6 +137,7 @@ in
       jsonls.enable = true;
       ltex.enable = true;
       lua_ls.enable = true;
+      marksman.enable = true;
       nginx_language_server.enable = true;
       nixd = {
         enable = true;
@@ -163,18 +165,41 @@ in
       # prismals.enable = true;
       pyright.enable = true;
 
-      ## rust-tools plugin is deprecated and project is abandoned - check that rust_analyzer is just relational to rust-tools.
-      #      rust_analyzer = {
-      #        enable = true;
-      #        installCargo = true;
-      #        installRustc = true;
-      #      };
-
+      rust_analyzer = {
+        enable = true;
+        installCargo = false;
+        installRustc = false;
+      };
       sqls.enable = true;
+      svelte.enable = true;
       tailwindcss.enable = true;
+      taplo.enable = true;
       terraformls.enable = true;
-      ts_ls.enable = true;
-      volar.enable = true;
+      ts_ls = {
+        enable = true;
+        filetypes = [
+          "typescript"
+          "javascript"
+          "javascriptreact"
+          "typescriptreact"
+          "vue"
+        ];
+        extraOptions = {
+          init_options = {
+            plugins = [
+              {
+                name = "@vue/typescript-plugin";
+                location = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
+                languages = [ "vue" ];
+              }
+            ];
+          };
+        };
+      };
+      volar = {
+        enable = true;
+        package = pkgs.vue-language-server;
+      };
       yamlls.enable = true;
       zls.enable = true;
     };
