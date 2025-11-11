@@ -165,11 +165,6 @@ in
       # prismals.enable = true;
       pyright.enable = true;
 
-      rust_analyzer = {
-        enable = true;
-        installCargo = false;
-        installRustc = false;
-      };
       sqls.enable = true;
       svelte.enable = true;
       tailwindcss.enable = true;
