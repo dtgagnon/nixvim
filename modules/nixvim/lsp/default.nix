@@ -170,31 +170,8 @@ in
       tailwindcss.enable = true;
       taplo.enable = true;
       terraformls.enable = true;
-      ts_ls = {
-        enable = true;
-        filetypes = [
-          "typescript"
-          "javascript"
-          "javascriptreact"
-          "typescriptreact"
-          "vue"
-        ];
-        extraOptions = {
-          init_options = {
-            plugins = [
-              {
-                name = "@vue/typescript-plugin";
-                location = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
-                languages = [ "vue" ];
-              }
-            ];
-          };
-        };
-      };
-      volar = {
-        enable = true;
-        package = pkgs.vue-language-server;
-      };
+      ts_ls.enable = true;
+      vue_ls.enable = true;
       yamlls.enable = true;
       zls.enable = true;
     };
