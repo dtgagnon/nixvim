@@ -3,8 +3,12 @@
 , ...
 }:
 let
-  inherit (lib) mkOption types;
+  inherit (lib) mkOption types mkIf;
   inherit (lib.spirenix-nvim) colors;
+
+  # When using Stylix, the colorscheme will be provided by Stylix's exported module
+  # through the .extend method, so we don't configure base16 ourselves
+  usingStylix = config.themeName == "stylix";
 in
 {
   options = {
@@ -28,7 +32,9 @@ in
     };
   };
 
-  config = {
+  config = mkIf (!usingStylix) {
+    # Only configure base16 if not using Stylix
+    # When using Stylix, the theme is injected via the exported module
     colorschemes.base16 = {
       enable = true;
       setUpBar = false;
