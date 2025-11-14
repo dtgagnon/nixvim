@@ -114,6 +114,6 @@ in
 
   # highlight group definition
   extraConfigLua = ''
-    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "${theme.base08}" })
+    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "${theme.base0F}" })
   '';
 }
