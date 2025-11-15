@@ -1,10 +1,10 @@
 { lib
 , config
+, colors
 , ...
 }:
 let
   inherit (lib) mkOption types mkDefault;
-  inherit (lib.spirenix-nvim) colors;
 in
 {
   options = {

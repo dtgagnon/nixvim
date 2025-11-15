@@ -1,16 +1,36 @@
 {
-  lib,
   pkgs,
-  config,
   inputs,
   neovim-settings ? { },
   neovim-config ? { },
   ...
 }:
 let
-  raw-modules = lib.snowfall.fs.get-default-nix-files-recursive (
-    lib.snowfall.fs.get-file "/modules/nixvim/"
-  );
+  lib = pkgs.lib;
+  # Recursively find all .nix files in a directory
+  findNixFiles =
+    dir:
+    let
+      entries = builtins.readDir dir;
+      processEntry =
+        name: type:
+        let
+          path = dir + "/${name}";
+        in
+        if type == "regular" && lib.hasSuffix ".nix" name then
+          [ path ]
+        else if type == "directory" then
+          findNixFiles path
+        else
+          [ ];
+    in
+    lib.flatten (lib.mapAttrsToList processEntry entries);
+
+  # Import the flake's custom lib first
+  flakeLib = import ../../lib { inherit lib; };
+
+  # Get all plugin module files
+  raw-modules = findNixFiles ../../plugins;
 
   wrapped-modules = builtins.map (
     raw-module:
@@ -24,6 +44,7 @@ let
             // {
               # NOTE: nixvim doesn't allow for these to be customized so we must work around the module system here...
               inherit lib pkgs;
+              inherit (flakeLib) colors;
             }
           )
         else

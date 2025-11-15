@@ -1,10 +1,10 @@
-{ 
+{
   lib,
   config,
+  colors,
   ...
 }:
 let
-  inherit (lib.spirenix-nvim) colors;
 in
 {
   config = lib.mkIf config.colorschemes.base16.enable {

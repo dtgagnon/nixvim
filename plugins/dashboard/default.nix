@@ -1,6 +1,5 @@
-{ lib, config, ... }:
+{ lib, config, colors, ... }:
 let
-  inherit (lib.spirenix-nvim) colors;
   theme = colors.${config.themeName};
 in
 {

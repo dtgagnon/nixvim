@@ -8,8 +8,8 @@
 
     nixd.url = "github:nix-community/nixd";
 
-    snowfall-lib.url = "github:snowfallorg/lib";
-    snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
+    blueprint.url = "github:numtide/blueprint";
+    blueprint.inputs.nixpkgs.follows = "nixpkgs";
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,33 +19,17 @@
   # NOTE: a note
   # WARN: a warning
   # HACK: a hack
-  outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
+  outputs =
+    inputs:
+    inputs.blueprint {
       inherit inputs;
-      src = ./.;
-      snowfall.namespace = "spirenix-nvim";
 
-      channels-config = {
-        allowBroken = true;
-        allowUnfree = true;
-      };
-
-      alias.packages.default = "neovim";
-
-      overlays = with inputs; [ nixvim.overlays.default ];
-
-      outputs-builder = channels: {
-        formatter = channels.nixpkgs.nixfmt-rfc-style;
-        checks.pre-commit-check = inputs.pre-commit-hooks.lib.${channels.nixpkgs.stdenv.hostPlatform.system}.run {
-          src = ./.;
-          hooks = {
-            nixfmt-rfc-style = {
-              enable = true;
-              entry = "${channels.nixpkgs.nixfmt-rfc-style}/bin/nixfmt";
-              extraPackages = [ channels.nixpkgs.nixfmt-rfc-style ];
-            };
-          };
+      nixpkgs = {
+        config = {
+          allowBroken = true;
+          allowUnfree = true;
         };
+        overlays = with inputs; [ nixvim.overlays.default ];
       };
     };
 }
