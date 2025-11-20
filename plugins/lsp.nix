@@ -1,5 +1,6 @@
 { pkgs
 , helpers
+, perSystem
 , ...
 }:
 let
@@ -141,7 +142,7 @@ in
       nginx_language_server.enable = true;
       nixd = {
         enable = true;
-        package = pkgs.nixd;
+        package = perSystem.nixd.nixd;
         settings = {
           nixpkgs.expr = "import <nixpkgs> { }";
           formatting.command = [ "nixpkgs-fmt" ];
