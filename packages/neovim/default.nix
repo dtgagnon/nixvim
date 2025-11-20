@@ -1,9 +1,8 @@
-{
-  pkgs,
-  inputs,
-  neovim-settings ? { },
-  neovim-config ? { },
-  ...
+{ pkgs
+, inputs
+, neovim-settings ? { }
+, neovim-config ? { }
+, ...
 }:
 let
   lib = pkgs.lib;
@@ -15,12 +14,12 @@ let
       processEntry =
         name: type:
         let
-          path = dir + "/${name}";
+          inPath = dir + "/${name}";
         in
         if type == "regular" && lib.hasSuffix ".nix" name then
-          [ path ]
+          [ inPath ]
         else if type == "directory" then
-          findNixFiles path
+          findNixFiles inPath
         else
           [ ];
     in
@@ -32,26 +31,29 @@ let
   # Get all plugin module files
   raw-modules = findNixFiles ../../plugins;
 
-  wrapped-modules = builtins.map (
-    raw-module:
-    args@{ ... }:
-    let
-      module = import raw-module;
-      result =
-        if builtins.isFunction module then
-          module (
-            args
-            // {
-              # NOTE: nixvim doesn't allow for these to be customized so we must work around the module system here...
-              inherit lib pkgs;
-              inherit (flakeLib) colors;
-            }
-          )
-        else
-          module;
-    in
-    result // { _file = raw-module; }
-  ) raw-modules;
+  wrapped-modules = builtins.map
+    (
+      raw-module:
+      args@{ ... }:
+      let
+        module = import raw-module;
+        result =
+          if builtins.isFunction module then
+            module
+              (
+                args
+                // {
+                  # NOTE: nixvim doesn't allow for these to be customized so we must work around the module system here...
+                  inherit lib pkgs;
+                  inherit (flakeLib) colors;
+                }
+              )
+          else
+            module;
+      in
+      result // { _file = raw-module; }
+    )
+    raw-modules;
 
   raw-neovim = pkgs.nixvim.makeNixvimWithModule {
     inherit pkgs;
