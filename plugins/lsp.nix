@@ -145,7 +145,7 @@ in
         package = perSystem.nixd.nixd;
         settings = {
           nixpkgs.expr = "import <nixpkgs> { }";
-          formatting.command = [ "nixpkgs-fmt" ];
+          formatting.command = [ "nixfmt" ];
           # # Capabailities for diagnosing semantic_token highlight issues on some nix files
           # options = {
           #   nixos.expr = ''
