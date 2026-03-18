@@ -40,6 +40,8 @@ in
     end
   '';
 
+  opts.spellfile = "~/.config/nvim/spell/en.utf-8.add";
+
   autoCmd = [{
     event = [ "BufRead" "BufNewFile" ];
     pattern = [ "*.txt" "*.md" "*.tex" "LICENSE" ];
